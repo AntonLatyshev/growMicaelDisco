@@ -1,0 +1,19 @@
+body {
+    overflow-x: hidden;
+}
+
+.wrapper{
+  max-width: 1920px;
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  position: relative;
+  // z-index: 2;
+  transition: transform .4s ease-in-out;
+  padding-bottom: 380px;
+  overflow: hidden;
+  background: #fff;
+  &.active{
+    transform:translate3d(-497px,0,0);
+  }
+}

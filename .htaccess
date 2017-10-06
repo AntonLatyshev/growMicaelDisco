@@ -1,0 +1,36 @@
+# Un comment it to restrict access from not listed in ip addresses
+#order deny,allow
+#deny from all
+#allow from 81.17.135.214 81.17.135.142 109.86.239.146 37.57.71.199 172.16.117.203
+
+# It may don`t work on some hostings
+#Options +FollowSymlinks
+
+Options -Indexes
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|svg)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+<FilesMatch "(?i)((\.tpl|\.ini|\.log|(?<!robots)\.txt))">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+<FilesMatch ".(pl|php|cgi|spl|scgi|fcgi)$">
+  Header unset Cache-Control
+</FilesMatch>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^sitemap.xml$ index.php?route=feed/google_sitemap [L]
+RewriteRule ^googlebase.xml$ index.php?route=feed/google_base [L]
+RewriteRule ^download/(.*) /index.php?route=error/not_found [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(ico|gif|jpg|jpeg|png|js|css|svg)
+RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]

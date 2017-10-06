@@ -1,0 +1,15 @@
+.callback-form-big(style="background-image:url(/image/data/callback-form-big.jpg)")
+  .callback__title Обратный звонок
+  .callback__block.callback__block--small
+    input(type="text", id="name", required).callback__input
+    label(for="name").callback__label Ваше имя
+    span.callback__line
+  .callback__block.callback__block--small
+    input(type="text", id="phone", required).callback__input
+    label(for="phone").callback__label Номер телефона
+    span.callback__line
+  .callback__block
+    textarea(type="text", id="textarea", required).callback__textarea
+    label(for="textarea").callback__label Сообщение
+    span.callback__line
+  button(type="submit").callback__submit отправить

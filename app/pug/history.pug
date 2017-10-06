@@ -1,0 +1,50 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Кабинет пользователя'])
+  +heading('Кабинет пользователя')
+  .admin
+    ul.admin__nav
+      - var arr = ['профиль', 'история заказов', 'изменить личные данные', 'сменить пароль']
+      - var i = 0
+      for key in arr
+        if (i === 1)
+          li.admin__item.active
+            a(href="#").admin__link= key
+        else
+          li.admin__item
+            a(href="#").admin__link= key
+        - i++
+    .admin__description
+      .history
+        .history__head.history__head--title
+          .tr
+            - var arr = ['Номер', 'дата', 'статус', 'товар', 'сумма']
+            for key in arr
+              .td= key
+        - var b = 0
+        while (b < 3)
+          .history__head
+            .tr
+              - var arr = ['55-33-44', '03.07.2016 ', 'Готовый', '2 шт.', '18 750 грн']
+              for key in arr
+                .td= key
+              .faq__open
+                +svg('arrow-down',20,14).faq__open-icon
+                +svg('close',14,14).faq__close-icon
+            .history__content
+              .popup-basket__body
+                - var i = 0
+                while (i < 2)
+                  include ./includes/_product-min.pug
+                  - i++
+              .history__section
+                .history__method Способ оплаты:
+                  .history__method-val  Наложенный платеж
+                .history__method Способ доставки:
+                  .history__method-val  Новая почта
+              .popup-basket__section
+                .popup-basket__block Сумма покупки:
+                span.popup-basket__summ
+                  span.summ-basket 7 310.00
+                  span.popup-basket__summ--small  грн
+          - b++

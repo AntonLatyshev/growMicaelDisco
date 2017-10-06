@@ -1,0 +1,50 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','О магазине'])
+  +heading('О магазине')
+  .about
+    .about-video(style="background-image: url(/image/data/about-video-mobile.jpg)")
+      .about-video__block
+        .about-video__title GROW.IN.UA
+        .about-video__subtitle Опт и розница товаров Indoor и Outdoor гровинга.
+      .about-video__mute
+      .about-video__overlay
+      video(muted="true" loop autoplay)
+        source(src="/image/data/video.webm" type="video/webm")
+        source(src="/image/data/video.mp4" type="video/mp4")
+    .about-content
+      .about-content__title Деятельность Grow.in.ua
+      p.
+        В продаже оборудование для грова: первоклассные лампы фирмы Philips Green Power , GIB, Lumatek, Sunmaster, Osram, Silvania, GE , удобрения для гидропоники от GHE, Hesi, Plagron, Canna, ProPioTech, Advanced Hydroponics, Biobizz, CannaBioGen, Atami, Valagro и др, сборные гроу боксы от Secret Jardin, Home Box, Pirat Box , вся необходимая электроника для автоматизации бокса угольные фильтра Prima Klima, Ona Gel для устранения запаха, самые тихие вентиляторы фирмы Soler Palau, самые большие отражатели  Adjust -A-Wings, lucilu. В любое время года у нас в магазине можно увидеть, например, свежий салат, клубнику, огурец или томат тянущиеся к LED лампе. У нас вы можете рассчитывать на квалифицированную помощь новичку и на серьезный ответ опытному гроверу.
+      .article__carousel
+        - var i = 0
+        while (i < 14)
+          +data('article-slide.jpg').article__slide
+          - i++
+      .article__current
+    .carousel-nav
+      .carousel-nav__title история
+      .carousel-nav__container
+        - var arr = ['2003', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2015']
+        for key in arr
+          .carousel-nav__slide= key
+    .carousel-for
+      - var i = 0
+      while (i < arr.length)
+        .carousel-for__slide
+          .carousel-for__title Рождение компании Grow.in.ua
+          p.
+            Мы родились, как Grow.in.ua, 02 апреля 2003 года. € тогда было по 5,8, $ по 5,3, бензин стоил 2 грн), было еще достаточно холодно +4, но ясная и солнечная погода располагала к хорошему настроению для регистрации домена grow.in.ua. Рыбным текстом называется текст, служащий для временного наполнения макета в публикациях или производстве веб-сайтов, пока финальный текст еще не создан.
+          +data('carousel-for-img.jpg')
+          p.
+            Рыбным текстом называется текст, служащий для временного наполнения макета в публикациях или производстве веб-сайтов, пока финальный текст еще не создан.
+        - i++
+    .command-carousel
+      - var i = 0
+      while (i<10)
+        .command-carousel__slide
+          +data('command-slide-1.png').command-carousel__img
+          .command-carousel__title
+            .command-carousel__name Александр М. А.
+            .command-carousel__job Флорист
+            - i++

@@ -1,0 +1,43 @@
+.menu-mobile
+  .menu-mobile__container
+    .menu-mobile__head
+      .catalog-btn
+        .catalog-btn__title каталог
+      .menu-mobile__icon.menu-mobile__icon--search
+        +svg('search',19,19)
+      .menu-mobile__icon.menu-mobile__icon--phone
+        +svg('phone',17,17)
+      a(href="#").menu-mobile__icon
+        +svg('enter',13,15)
+      .menu-mobile__icon.menu-mobile__icon--basket
+        +svg('basket',18,15)
+    .menu-mobile__options
+      .language
+        .language__value рус
+        +svg('arrow-down',11,7).arrow-svg
+        ul.language__list
+          - var item = ['укр']
+          for key in item
+            li.language__item
+              a(href="#").language__link= key
+      .currency
+        .currency__value $
+        +svg('arrow-down',11,7).arrow-svg
+        ul.currency__list
+          - var item = ['₴']
+          for key in item
+            li.currency__item
+              a(href="#").currency__link= key
+    ul.menu-mobile__nav
+      - var item = ['О Комании', 'вопрос-ответ', 'партнерам', 'блог', 'оплата-доставка ', 'контакты']
+      for key in item
+        li.menu__item
+          a(href="#").menu__link
+            span.menu__link-hover(data-hover=""+key)= key
+    .menu-mobile-window.menu-mobile__search
+      input.header__input(type="text", placeholder="Что ищем...")
+      button.header__search-btn(type="submit")
+    .menu-mobile-window.menu-mobile__phone
+      a(href="tel:+380574831701").dropdown-phone__value +38 (057) 483-17-01
+      a(href="tel:+380574831701").dropdown-phone__value +38 (044) 483-17-01
+      a(href="tel:+380574831701").dropdown-phone__value +38 (096) 483-17-01

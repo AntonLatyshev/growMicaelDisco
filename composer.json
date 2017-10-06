@@ -1,0 +1,12 @@
+{
+    "name": "art-lemon/box-shop",
+    "authors": [
+        {
+            "name": "Art-lemon Team",
+            "email": "hello@art-lemon.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.1"
+    }
+}

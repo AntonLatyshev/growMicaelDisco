@@ -1,0 +1,57 @@
+.not-found{
+  position: relative;
+  width: 100%;
+  height: 526px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 150%;
+    background-image: url('/image/data/not-found.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  &__container{
+    width: 1410px;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 80px;
+    @include flex(column, wrap, center, flex-start);
+    @include response(1430) {
+      width: 100%;
+    }
+    @include response(960) {
+      align-items: center;
+      padding-left: 0;
+    }
+  }
+  &__block{
+    width: 526px;
+    @include flex(column, wrap, center, center);
+    position: relative;
+    z-index: 1;
+    @include response(960) {
+      width: 100%;
+    }
+  }
+  &__title{
+    width: 235px;
+    text-align: center;
+    @include font(false,16,#fff,false,24,false);
+  }
+  &__link{
+    @include font(false,14,#f4bc10,false,false,700);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  &__img{
+    height: auto;
+  }
+}

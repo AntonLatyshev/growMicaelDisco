@@ -1,0 +1,23 @@
+.features
+  .features__container
+      .features__title
+      .features__catalog
+        .tab
+          .tab__head
+            .tab__title Популярные товары
+            ul.tab__list
+              - var arr = ['Акции', 'Новинки', 'Хиты продаж']
+              - var i = 0
+              for item in arr
+                li.tab__item
+                  a(href="#tab-1_"+i).tab__link= item
+                  - i++
+          .tab__container
+            - var n = 0
+            while (n < 3)
+              .tab__content(id="tab-1_"+n)
+                - var k = 0
+                while (k < 8)
+                  include _product.pug
+                  - k++
+                - n++

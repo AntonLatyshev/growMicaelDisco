@@ -1,0 +1,51 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Контакты'])
+  +heading('Контакты')
+  .contact
+    .contact__container
+      .contact__block
+        +svg('contact-icon-1',25,42).contact__icon
+        .contact__description
+          a(href="tel:+380442293296").contact__value (044) 229 32 96
+          a(href="tel:+380669569768").contact__value (066) 956 97 68
+      .contact__block
+        +svg('contact-icon-2',39,39).contact__icon
+        .contact__description
+          .contact__value Пн.-Пт.: с 9 до 19
+          .contact__value Сб.-Вс.: с 9 до 18
+      .contact__block
+        +svg('contact-icon-3',28,40).contact__icon
+        .contact__description
+          address.contact__value Киев, ул. Вокзальная 4
+      .contact__block
+        +svg('contact-icon-4',38,37).contact__icon
+        .contact__description
+          a(href="mailto:gidra@grow.in.ua").contact__value gidra@grow.in.ua
+    .map#map
+    .callback-block
+      .callback-block__container(style="background-image:url(/image/data/delivery-contact-bg.png)")
+        form.callback-block__form(style="background-image:url(/image/data/callback-block-form-bg.jpg)")
+          .contact-description
+            .contact-description__title GROW.IN.UA
+            .contact-description__subtitle Опт и розница товаров Indoor и Outdoor гровинга.
+            .contact-description__text Наш магазин находится в центре Киеве, проспект Воздухофлотский 5. (вход со двора) м.Вокзальная. От Южного Ж-Д вокзала 5 минут. Напротив Министерства Обороны, стадиона ЦСКА.
+          .contact-description-form
+            .callback__title Обратный звонок
+            .callback__block
+              input(type="text", id="name", required).callback__input
+              label(for="name").callback__label Ваше имя
+              span.callback__line
+            .callback__block
+              input(type="text", id="phone", required).callback__input
+              label(for="phone").callback__label Номер телефона
+              span.callback__line
+            .callback__block
+              textarea(type="text", id="textarea", required).callback__textarea
+              label(for="textarea").callback__label Сообщение
+              span.callback__line
+            button(type="submit").callback__submit отправить
+        .callback-block__description
+          .callback-block__title Мы подберем для вас оптимальный
+            span.yellow товар
+          .callback-block__subtitle Напишите нам, наш менеджер перезвонит вам в ближайшее время.

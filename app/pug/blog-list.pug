@@ -1,0 +1,24 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','блог'])
+  .blog-list
+    .heading
+      .heading__container
+        h2.heading__title Блог
+        ul.blog-list__nav
+          - i = 0
+          - var arr = ['технологии', 'акции', 'пресса']
+          for key in arr
+            if (i === 0)
+              li.blog-list__item.active
+                a(href="#").blog-list__link= key
+            else
+              li.blog-list__item
+                a(href="#").blog-list__link= key
+            - i++
+    .blog-list__container
+      - var cur = 0
+      while (cur < 6)
+        include ./includes/_blog-item.pug
+        - cur++
+    include ./includes/_pagination.pug

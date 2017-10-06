@@ -1,0 +1,36 @@
+.mCSB_scrollTools {
+  opacity: 1;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: $green;
+  background-color: rgba($green,1);
+  width: 3px;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  border-radius: 0;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: #bfbfbf;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  width: 1px;
+  border-radius: 0;
+}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+  background-color: $green;
+  background-color: rgba($green,1);
+}
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+  background-color: $green;
+  background-color: rgba($green,1);
+}
+.mCSB_inside > .mCSB_container {
+  margin-right: 10px;
+}
+.mCSB_scrollTools {
+opacity: 1;
+}
+.mCSB_scrollTools {
+  right: 0;
+}

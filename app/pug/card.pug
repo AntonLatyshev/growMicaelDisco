@@ -1,0 +1,152 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Агрохимия', 'Вентилятор Soler&Palau'])
+  +heading('Вентилятор Soler&Palau')
+  .card-wrapper
+    .card
+      .card__section
+        .card-carousel
+          .card-carousel-nav
+            - var i = 0
+            while (i < 6)
+              .card-carousel-nav__slide
+                +data('card-1.png').card-carousel-nav__img
+              - i++
+          .card-carousel-for
+            - var i = 0
+            while (i < 6)
+              .card-carousel-for__slide
+                +data('card-1.png').card-carousel-for__img
+              - i++
+        include ./includes/_share.pug
+      .card__description
+        .card__head
+          .card__content
+            .card__top
+              .card__id №: 123-9987
+              .card__availability В наличии
+              .card__raiting Рейтинг
+                .card__raiting-block
+                  .card__raiting-val 4
+                  .card__raiting-total /5
+                  .card__raiting-icon
+                    +svg('plant-1',6,13)(data-star="1", style="display: none;")
+                    +svg('plant-2',10,28)(data-star="2", style="display: none;")
+                    +svg('plant-3',16,36)(data-star="3", style="display: none;")
+                    +svg('plant-4',21,45)(data-star="4", style="display: none;")
+                    +svg('plant-5',22,53)(data-star="5", style="display: none;")
+            .card__packaging ФАСОВКА:
+              select
+                option(value="1000") По 1000 штук в упаковке
+                option(value="2000") По 2000 штук в упаковке
+            .card__price-block
+              .card__price 2 230.00 грн.
+              .card__price-old 2 230.00 грн.
+              .card__sale -15%
+            .card__button
+              .card__buy в корзину
+              .card__buy-onclick Купить в один клик
+          .card__review-raiting
+            .card__review-title Ваша оценка:
+            .card__review-container(data-rate="")
+              input(type="radio" value="star-5" name="star" id="star-5")
+              label(for="star-5").card__review-block
+                +svg('plant-5',22,53).card__review-svg
+                .card__review-position 5
+              input(type="radio" value="star-4" name="star" id="star-4")
+              label(for="star-4").card__review-block
+                +svg('plant-4',21,45).card__review-svg
+                .card__review-position 4
+              input(type="radio" value="star-3" name="star" id="star-3")
+              label(for="star-3").card__review-block
+                +svg('plant-3',16,36).card__review-svg
+                .card__review-position 3
+              input(type="radio" value="star-2" name="star" id="star-2")
+              label(for="star-2").card__review-block
+                +svg('plant-2',10,28).card__review-svg
+                .card__review-position 2
+              input(type="radio" value="star-1" name="star" id="star-1")
+              label(for="star-1").card__review-block
+                +svg('plant-1',6,13).card__review-svg
+                .card__review-position 1
+        .card-tab
+          .tab
+            ul.tab__list
+              - var arr = ['ОПИСАНИЕ', 'ВИДЕО', 'инструкция по применению', 'отзывы']
+              - var i = 0
+              for item in arr
+                li.tab__item
+                  a(href="#tab-"+i).tab.tab__link= item
+                  - i++
+            .tab__container
+              .tab__content(id="tab-0")
+                p.
+                  Рыбным текстом называется текст, служащий для временного наполнения макета в публикациях или производстве веб-сайтов, пока финальный текст еще не создан. Рыбный текст также известен как текст-заполнитель или же текст-наполнитель. Иногда текст-«рыба» также используется композиторами при написании музыки. Они напевают его перед тем, как распространение у печатников. Рыбный текст также известен как текст-заполнитель или же текст-наполнитель. Иногда текст-«рыба» также используется композиторами при написании музыки. Они напевают его перед тем, как распространение у печатников.
+              .tab__content(id="tab-1")
+                a(href="https://www.youtube.com/embed/RpG7FzXrNSs", class="about-block__video fancybox fancybox.iframe", style="background-image: url('/image/data/video-bg.jpg')")
+                  span.video-btn
+                    span.video-btn__icon
+                    span.video-btn__title просмотреть видео
+              .tab__content(id="tab-2")
+                p.
+                  Рыбным текстом называется текст, служащий для временного наполнения макета в публикациях или производстве веб-сайтов, пока финальный текст еще не создан. Рыбный текст также известен как текст-заполнитель или же текст-наполнитель. Иногда текст-«рыба» также используется композиторами при написании музыки. Они напевают его перед тем, как распространение у печатников. Рыбный текст также известен как текст-заполнитель или же текст-наполнитель. Иногда текст-«рыба» также используется композиторами при написании музыки. Они напевают его перед тем, как распространение у печатников.
+              .tab__content(id="tab-3")
+                - i = 0
+                while (i < 2)
+                  .review
+                    .review__head
+                      +svg('quote',21,21).review__quote
+                      .review__name Андрев А. Д.
+                      .review__raiting-title Рейтинг
+                      .card__raiting-block
+                        .card__raiting-val 3
+                        .card__raiting-total /5
+                        .card__raiting-icon
+                          +svg('plant-1',6,13)(data-star="1", style="display: none;")
+                          +svg('plant-2',10,28)(data-star="2", style="display: none;")
+                          +svg('plant-3',16,36)(data-star="3", style="display: none;")
+                          +svg('plant-4',21,45)(data-star="4", style="display: none;")
+                          +svg('plant-5',22,53)(data-star="5", style="display: none;")
+                      time(datetime="2016/10/12").review__date 12.10.2016
+                    .review__content
+                      p.
+                        Неплохо, думал за такую цену будет что-то хуже чем на фото. Инструментом пользуюсь редко, покупать дорогой как то жалко. Пока сверлил только дерево, как дрель вполне нормально работает. попробовал как ударную, слабовато, кирпич возьмет, бетон возьмет, а сверлить, удар слабоват. Аккуратно собрана, внешне приятна, как дрель нормально, и конечно же приятная ЦЕНА! За эти деньги смешно искать недостатки.
+                    .valuation
+                      .valuation__event#like
+                        +svg('like',23,24).valuation__icon
+                        .valuation__value 0
+                      .valuation__event#dislike
+                        +svg('dislike',23,24).valuation__icon.valuation__icon--dislike
+                        .valuation__value 0
+                        - i++
+                .review-bottom
+                  include ./includes/_pagination.pug
+                  button.review-edit
+                    +svg('edit',24,24).review-edit__icon
+                    .review-edit__title Написать отзыв
+    - var title = 'вам также могут пригодиться'
+    include ./includes/_more-carousel.pug
+    - var title = 'ранее просмотренные товары'
+    include ./includes/_more-carousel.pug
+    .callback-block
+      .callback-block__container(style="background-image:url(/image/data/callback-block-card-bg.png)")
+        form.callback-block__form(style="background-image:url(/image/data/callback-block-form-bg.jpg)")
+          .callback__title Обратный звонок
+          .callback__block
+            input(type="text", id="name", required).callback__input
+            label(for="name").callback__label Ваше имя*
+            span.callback__line
+          .callback__block
+            input(type="text", id="phone", required).callback__input
+            label(for="phone").callback__label Номер телефона*
+            span.callback__line
+          .callback__block
+            textarea(type="text", id="textarea", required).callback__textarea
+            label(for="textarea").callback__label Сообщение*
+            span.callback__line
+          button(type="submit").callback__submit отправить
+        .callback-block__description
+          +data('logo-dark.png').callback-block__logo
+          .callback-block__title Мы подберем для вас оптимальный
+            span.yellow товар
+          .callback-block__subtitle Напишите нам, наш менеджер перезвонит вам в ближайшее время.

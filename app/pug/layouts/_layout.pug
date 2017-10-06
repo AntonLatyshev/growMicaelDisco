@@ -1,0 +1,17 @@
+include ../includes/_mixins.pug
+doctype html
+html(lang="en")
+  include ../includes/_head.pug
+  body
+    include ../includes/_popup.pug
+    include ../includes/_popup-review.pug
+    include ../includes/_thanks.pug
+    include ../includes/_popup-basket.pug
+    include ../includes/_menu-mobile.pug
+    include ../includes/_popup-card-click.pug
+    .wrapper
+      include ../includes/_overlay.pug
+      include ../includes/_header.pug
+      block content
+    include ../includes/_footer.pug
+    include ../includes/_js.pug

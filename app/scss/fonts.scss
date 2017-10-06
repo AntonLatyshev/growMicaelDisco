@@ -1,0 +1,87 @@
+@mixin font($fontname, $filename) {
+  @font-face {
+    font-family: $fontname;
+    src: url(#{'../fonts/'+$filename+'.eot'});
+    src:
+      url(#{'../fonts/'+$filename+'.eot?#iefix'}) format("embedded-opentype"),
+      url(#{'../fonts/'+$filename+'.woff'}) format("woff"),
+      url(#{'../fonts/'+$filename+'.svg'}) format("svg"),
+      url(#{'../fonts/'+$filename+'.ttf'}) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+*{
+  font-size: 14px;
+  color: #000;
+}
+%text {
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: 1.8rem;
+      color: #000;
+      margin-top: .5em;
+      margin-bottom: .5em;
+      font-family: 'Roboto Slab', serif;
+    }
+  }
+  h3{
+    font-size: 32px;
+    @media all and (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+  strong,
+  b,
+  th {
+    font-weight: 700;
+  }
+  em,
+  i {
+    font-style: italic;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    border: 1px solid #999;
+    padding: 5px;
+  }
+  th {
+    color: #474747;
+    text-align: center;
+  }
+  p,
+  table,
+  ul,
+  ol {
+    font-size: 16px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    line-height: 24px;
+    color: #666666;
+    @media all and (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+  ul {
+    list-style-type: disc;
+  }
+  img {
+    display: block;
+    margin: 1.5em auto;
+    max-width: 100%;
+    height: auto;
+  }
+  ul,
+  ol {
+    padding-left: 0;
+  }
+  iframe {
+    max-width: 100%;
+    display: block;
+    margin: 30px auto;
+  }
+}

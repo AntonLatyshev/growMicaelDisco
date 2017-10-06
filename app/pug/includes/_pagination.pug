@@ -1,0 +1,11 @@
+- var arr = [' ', '1', '2', '3', '4', '...', '9', ' ']
+ul.pagination
+  for key, index in arr
+    if (index == 2)
+      li.pagination__item.active
+        a(href="#").pagination__link= key
+    else if (index == 5)
+      li.pagination__item= key
+    else
+      li.pagination__item
+        a(href="#").pagination__link= key

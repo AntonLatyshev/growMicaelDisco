@@ -1,0 +1,89 @@
+[class^="cb-icon-"], [class*=" cb-icon-"] {
+  background: url("../image/checkbox.png") no-repeat;
+  display: inline-block;
+  height: 21px;
+  line-height: 21px;
+  margin-top: 1px;
+  vertical-align: text-top;
+  width: 21px;
+}
+
+.bootstrap-checkbox button.btn > span.cb-icon-check-empty {
+  background-position: 0 -23px;
+}
+
+.bootstrap-checkbox button.btn > span.cb-icon-check {
+  background-position: 0 -1px;
+}
+
+.bootstrap-checkbox button.btn > span.cb-icon-check-indeterminate {
+  background-position: 0 -45px;
+}
+
+input[disabled] + .bootstrap-checkbox {
+  cursor: no-drop;
+  button.btn > span.cb-icon-check-empty {
+    background-position: 0 -45px;
+    cursor: not-allowed;
+  }
+}
+
+.checkbox {
+  .bootstrap-checkbox {
+    display: inline-block;
+  }
+  span {
+    vertical-align: middle;
+    position: relative;
+    &.icon {
+      top: -3px;
+    }
+  }
+}
+
+.bootstrap-checkbox {
+  > button.btn {
+    box-shadow: none !important;
+    margin: 0 5px 0 0;
+    outline: none !important;
+    padding: 0;
+    -webkit-box-shadow: none !important;
+    border: none;
+    vertical-align: top;
+    top: -1px;
+    position: relative;
+  }
+  > button.btn.displayAsButton {
+    width: auto;
+    > span.label-checkbox {
+      padding: 0 8px 0 4px;
+    }
+    > span.icon {
+      margin: 2px 4px;
+    }
+    > span.label-prepend-checkbox {
+      padding: 0 4px 0 8px;
+    }
+  }
+  > button.btn.btn-large {
+    padding: 10px 0 6px 2px;
+    width: 36px;
+  }
+  > button.btn.btn-small {
+    padding: 5px 0 3px 1px;
+    width: 24px;
+  }
+  > button.btn.btn-mini {
+    padding: 4px 0 1px 1px;
+    width: 20px;
+  }
+  > .btn.btn-link {
+    text-decoration: none;
+  }
+  > .label-prepend-checkbox {
+    padding-right: 4px;
+  }
+  > .label-checkbox {
+    padding-left: 4px;
+  }
+}

@@ -1,0 +1,16 @@
+.card-click
+  .callback__container
+    +data('callback-bg.jpg').callback__bg
+    form.callback__form
+      +svg('close',14,14).callback__close
+      .callback__title Купить в один клик
+      .callback__subtitle Заказать без оформления. Просто оставить телефон и консультант решит все вопросы по оформлению заказа.
+      .callback__block
+        input(type="text", id="callback__form-name", name="callback__form-name", required).callback__input
+        label(for="callback__form-name").callback__label Ваше имя
+        span.callback__line
+      .callback__block
+        input(type="text", id="callback__form-phone", name="callback__form-phone", required).callback__input
+        label(for="callback__form-phone").callback__label Номер телефона
+        span.callback__line
+      button(type="submit").callback__submit отправить

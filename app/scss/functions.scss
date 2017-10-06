@@ -1,0 +1,7 @@
+@function img-url($url) {
+  @return url('/catalog/view/theme/default/image/'+$url);
+}
+
+@function data-url($url) {
+  @return url('/image/data/'+$url);
+}

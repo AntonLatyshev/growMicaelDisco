@@ -1,0 +1,1 @@
+export default ["dev","about.html","agrochemistry.html","article.html","basket.html","blog-list.html","card.html","catalog.html","change-password.html","change-profile.html","contact.html","delivery.html","drop.html","faq.html","forgot-password.html","history.html","index.html","login.html","not-found.html","singup.html","user.html"]

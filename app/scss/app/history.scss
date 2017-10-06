@@ -1,0 +1,104 @@
+.history {
+  width: 100%;
+  @include response(480) {
+    width: 800px;
+  }
+  &__content {
+    box-shadow: 0 6px 25px 0 rgba(#000, 0.15);
+    width: 100%;
+    display: none;
+  }
+  &__head {
+    margin-bottom: 40px;
+  }
+  &__section{
+    @include flex(row, wrap, flex-start, center);
+    height: 60px;
+    border-bottom:1px solid #dde4e1;
+    padding: 0 25px;
+  }
+  &__method{
+    @include flex(row, wrap, flex-start, center);
+    @include font(false,16,#000,false,false,false);
+    margin-right: 35px;
+  }
+  &__method-val{
+    @include font(false,16,#8f8f8f,false,false,false);
+    margin-left: 5px;
+  }
+  .tr {
+    width: 100%;
+    height: 65px;
+    background: #f3f3f3;
+    @include flex(row, wrap, flex-start, center);
+    position: relative;
+    transition: background .2s ease-in-out;
+    @include response(480) {
+      height: 40px;
+    }
+    &.open{
+      background: #fff;
+      border-bottom:1px solid #dde4e1;
+      .faq__open{
+        box-shadow: none;
+        border-bottom:1px solid #dde4e1;
+      }
+      .faq__close-icon{
+        display: block;
+      }
+      .faq__open-icon{
+        display: none;
+      }
+    }
+  }
+  .td {
+    text-transform: uppercase;
+    width: 17%;
+    padding-left: 27px;
+    @include font(rob,16,#000,false,false,700);
+  }
+  .faq__open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+  .product-min__basket-icon{
+    display: none;
+  }
+  .popup-basket__section{
+    height: 75px;
+    padding: 0 25px;
+  }
+  .popup-basket__block{
+    @include font(false,18,#000,false,false,false);
+  }
+  .popup-basket__body{
+    height: auto;
+    .product-min__button {
+        display: none;
+    }
+  }
+  .product-min__section{
+    justify-content: flex-start;
+  }
+  .product-min__counter{
+    margin-left: 30px;
+  }
+}
+.history__head--title{
+  margin-bottom: 0;
+  .tr {
+    background: #fff;
+  }
+  .td {
+    @include font(false,12,#000,false,.025,false);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+  }
+}
+.history-title {
+    @include font(false,18,#000,false,false,600);
+    padding: 0 0 0 30px;
+    margin: 0 0 20px;
+}

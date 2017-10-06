@@ -1,0 +1,196 @@
+.blog-list {
+  margin-bottom: 90px;
+  &__nav {
+    padding: 0;
+    list-style: none;
+    @include flex(row, wrap, flex-end, center);
+    @include response(480) {
+      justify-content: center;
+      padding-top: 20px;
+    }
+  }
+  &__item {
+    margin-left: 60px;
+    @include response(480) {
+      margin: 0 5px;
+    }
+    &.active {
+      .blog-list__link {
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: #f4bc10;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  &__link {
+    @include font(false,14,#fff,false,false,700);
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    padding: 12px 0;
+    display: block;
+    @include response(480) {
+      font-size: 12px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #f4bc10;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: width 0.2s ease-in-out;
+    }
+    @include desktop-hover() {
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  &__container{
+    width: 1410px;
+    margin: 0 auto;
+    padding-top: 90px;
+    @include flex(row, wrap, flex-start, flex-start);
+    @include response(1430) {
+      width: 100%;
+      padding: 90px 3% 0;
+    }
+    @include response(1180) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__block{
+    width: 682px;
+    height: 160px;
+    margin-bottom: 40px;
+    margin-right: 45px;
+    @include flex(row, nowrap, flex-start, scretch);
+    box-shadow: 0px 6px 8px 0px rgba(#000, 0.07);
+    transition: box-shadow .2s ease-in-out;
+    @include desktop-hover(){
+      box-shadow: 0px 18px 29px 0px rgba(201, 201, 201, 0.44);
+    }
+    &:nth-of-type(2n){
+      margin-right: 0;
+    }
+    @include response(1430) {
+      width: 45%;
+    }
+    @include response(1180) {
+      width: 682px;
+      margin-right: 0;
+    }
+    @include response(700) {
+      width: 100%;
+      flex-wrap: wrap;
+      height: auto;
+      padding: 30px 0;
+    }
+    @include response(480) {
+      justify-content: center;
+    }
+  }
+  &__date{
+    flex: 0 0 133px;
+    @include flex(column, wrap, center, center);
+    @include response(480) {
+      margin-bottom: 30px;
+    }
+  }
+  &__day{
+    @include font(rob,58,#000,false,false,false);
+    position: relative;
+    &::after{
+      content: "";
+      display: block;
+      width: 55px;
+      height: 1px;
+      background: $green;
+      position: absolute;
+      bottom:4px;
+      left:50%;
+      transform:translate3d(-50%,0,0);
+    }
+  }
+  &__month{
+    @include font(rob,13,#000,false,false,false);
+    text-transform: uppercase;
+  }
+  &__img{
+    display: block;
+    flex: 0 0 142px;
+    width: 142px;
+    height: 160px;
+    overflow: hidden;
+    @include response(480) {
+      margin-bottom: 30px;
+    }
+  }
+  &__description{
+    flex: 1 1 auto;
+    padding: 0 35px;
+    @include flex(column, wrap, center, flex-start);
+  }
+  &__title{
+    @include font(rob,16,#000,false,false,700);
+    margin-bottom: 30px;
+    padding-top: 13px;
+    display: inline-block;
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+    max-width: 336px;
+    @include desktop-hover(){
+      color: $green;
+    }
+    @include response(480) {
+      font-size: 14px;
+    }
+  }
+  &__link-block{
+    display: inline-block;
+    @include font(false,12,#000,false,false,false);
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    padding-left: 56px;
+    transition: color .2s ease-in-out;
+    @include response(480) {
+      padding-left: 0;
+    }
+    &::before{
+      content: "";
+      display: block;
+      width: 43px;
+      height: 1px;
+      background: $green;
+      position: absolute;
+      top:50%;
+      right: 80px;
+      transition: width .2s ease-in-out;
+      @include response(480) {
+        display: none;
+      }
+    }
+    @include desktop-hover(){
+      color: $green;
+      &::before{
+        content: "";
+        display: block;
+        width: 10px;
+      }
+    }
+  }
+}

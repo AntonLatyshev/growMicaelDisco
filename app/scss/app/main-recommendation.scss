@@ -1,0 +1,215 @@
+.main-recommendation {
+  width: 100%;
+  margin-bottom: 90px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 396px;
+    background: $dgreen;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0,-50%,0);
+    z-index: -1;
+    @include response(920) {
+      display: none;
+    }
+  }
+  &__container {
+    width: 1410px;
+    margin: 0 auto;
+    @include flex(row, wrap, space-between, flex-end);
+    @include response(1430) {
+      width: 100%;
+      padding: 0 3%;
+    }
+    @include response(920) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__block-first {
+    display: block;
+    width: 564px;
+    height: 544px;
+    background: $dgreen;
+    box-shadow: 0 8px 29px 0 rgba(0, 0, 0, 0.28);
+    text-decoration: none;
+    transition: background 0.2s ease-in-out;
+    @include desktop-hover() {
+      background: $green;
+      .main-recommendation__id {
+        color: #004221;
+      }
+    }
+    .main-recommendation__img {
+      height: 415px;
+      @include response(1180) {
+        height: 200px;
+      }
+    }
+    @include response(1430) {
+      width: 400px;
+    }
+    @include response(1180) {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 30px;
+    }
+    @include response(380) {
+      width: 100%;
+    }
+  }
+  &__block-second {
+    display: block;
+    width: 398px;
+    height: 330px;
+    background: $dgreen;
+    box-shadow: 0 8px 29px 0 rgba(#000, 0.28);
+    text-decoration: none;
+    position: relative;
+    transition: background 0.2s ease-in-out;
+    @include desktop-hover() {
+      background: $green;
+      .main-recommendation__id {
+        color: #004221;
+      }
+    }
+    .main-recommendation__img {
+      height: 220px;
+      @include response(1180) {
+        height: 200px;
+      }
+    }
+    @include response(1300) {
+      width: 350px;
+    }
+    @include response(1180) {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 30px;
+    }
+    @include response(920) {
+      position: static;
+    }
+    @include response(380) {
+      width: 100%;
+    }
+  }
+  &__block-third {
+    display: block;
+    width: 364px;
+    height: 246px;
+    background: $dgreen;
+    box-shadow: 0 8px 29px 0 rgba(0, 0, 0, 0.28);
+    text-decoration: none;
+    position: relative;
+    transition: background 0.2s ease-in-out;
+    @include desktop-hover() {
+      background: $green;
+      .main-recommendation__id {
+        color: #004221;
+      }
+    }
+    @include response(1180) {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 30px;
+    }
+    @include response(380) {
+      width: 100%;
+    }
+    .main-recommendation__description{
+      position: absolute;
+      left: 0;
+      bottom: 25px;
+    }
+    .main-recommendation__img {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      @include response(1180) {
+        height: 200px;
+      }
+      img {
+        max-width: none;
+        max-height: none;
+        position: absolute;
+        bottom: 55px;
+        right: 0;
+        z-index: 1;
+        @include response(1180) {
+          position: relative;
+          bottom: 0;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+  &__description {
+    display: block;
+    padding: 15px 60px;
+    @include response(1180) {
+      padding: 15px;
+    }
+  }
+  &__img {
+    width: 100%;
+    @include flex(row, wrap, center, center);
+    img {
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+  }
+  &__title {
+    display: block;
+    @include font(false,16,#fff,false,false,700);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  &__id {
+    color: #436454;
+    transition: color 0.2s ease-in-out;
+  }
+  &__section {
+    position: absolute;
+    top: -110px;
+    left: 0;
+    @include response(1180) {
+      top: -160px;
+    }
+    @include response(920) {
+      left: 50%;
+      transform:translate3d(-50%,0,0);
+    }
+  }
+  &__heading {
+    display: block;
+    @include font(rob,36,#fff,false,false,700);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    @include response(1180) {
+      color: #000;
+    }
+    @include response(480) {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+  &__subtitle {
+    display: block;
+    @include font(false,16,#fff,false,false,false);
+    @include response(1180) {
+      color: #000;
+    }
+    @include response(480) {
+      text-align: center;
+    }
+  }
+}

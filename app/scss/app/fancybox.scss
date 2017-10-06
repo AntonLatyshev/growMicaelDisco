@@ -1,0 +1,44 @@
+.fancybox-close {
+    background-image: none;
+    position: absolute;
+    top: -24px;
+    right: -48px;
+    fill: #878c89;
+    cursor: pointer;
+    &:hover{
+      &::before{
+        content: "";
+        display: block;
+        background: $green;
+      }
+      &::after{
+        content: "";
+        display: block;
+        background: $green;
+      }
+    }
+    &::before{
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate3d(-50%,-50%,0) rotate(45deg);
+      transition: background .2s ease-in-out;
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate3d(-50%,-50%,0) rotate(-45deg);
+      transition: background .2s ease-in-out;
+    }
+}

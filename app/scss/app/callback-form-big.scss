@@ -1,0 +1,30 @@
+.callback-form-big{
+  box-shadow: 0px 8px 29px 0px rgba(#000, 0.74);
+  width: 919px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include flex(row, wrap, space-between, center);
+  position: relative;
+  z-index: 2;
+  padding: 90px 100px;
+  @include response(920) {
+    width: 100%;
+  }
+  @include response(480) {
+    padding: 60px 30px;
+  }
+  .callback__block--small{
+    width: 342px;
+    @include response(920) {
+      width: 100%;
+    }
+  }
+  .callback__title{
+    text-align: center;
+  }
+  .callback__submit{
+    width: 338px;
+    margin: 0 auto;
+  }
+}

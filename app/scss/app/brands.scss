@@ -1,0 +1,111 @@
+.block-title {
+    max-width: 1410px;
+    margin: 0 auto 50px;
+    span {
+        position: relative;
+        @include font(rob,36,#000,false,false,700);
+        &::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: $green;
+            position: absolute;
+            right: -140px;
+            top: 50%;
+            margin: -2px 0 0;
+        }
+    }
+}
+.brands {
+  width: 1410px;
+  margin: 0 auto 60px;
+  position: relative;
+  @include response(1410) {
+    width: 100%;
+    padding: 0 3%;
+  }
+  &::before{
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 335px;
+    background: $dgreen;
+    position: absolute;
+    top:0;
+    left:50%;
+    transform:translate3d(-50%,0,0);
+    z-index: -1;
+    @include response(767) {
+      left: 0;
+      transform: translate3d(0,0,0);
+    }
+  }
+  &__title {
+    padding: 70px 0 46px;
+    @include font(rob,36,#fff,false,false,700);
+    text-transform: uppercase;
+    @include response(480) {
+      font-size: 18px;
+    }
+  }
+  &__slide {
+    width: 176px;
+    height: 395px;
+    outline: none;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    outline: 1px solid #000;
+    @include desktop-hover(){
+      .brands__info{
+        opacity: 1;
+      }
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 226px;
+      position: absolute;
+      bottom:0;
+      left:0;
+      background: $dgreen;
+      z-index: -1;
+    }
+  }
+  &__img {
+    height: 169px;
+    margin-bottom: 90px;
+    background: #fff;
+    img{
+      width: auto;
+      max-width: none;
+    }
+  }
+  &__logo{
+    display: block;
+    margin: 0 auto;
+  }
+  &__info{
+    width: 100%;
+    height: 100%;
+    background: $green;
+    position: absolute;
+    top:0;
+    left:0;
+    @include flex(row, wrap, center, center);
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+  }
+  .slick-prev {
+    top: -106px;
+    right: 68px;
+    z-index: 3;
+  }
+  .slick-next {
+    top: -106px;
+    right: 0;
+    z-index: 3;
+  }
+}

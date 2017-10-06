@@ -1,0 +1,61 @@
+.popup-review{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(#000,.8);
+  z-index: 10;
+  @include flex(row, wrap, center, flex-start);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  .callback__form{
+    padding: 80px;
+    @include response(480) {
+      padding: 60px 30px;
+    }
+  }
+  .callback__title{
+    margin-bottom: 30px;
+  }
+  .card__review-raiting{
+    margin: 0 auto 30px;
+    height: auto;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+  }
+  .card__review-title{
+    color: #fff;
+  }
+  .card__review-position{
+    color: #fff;
+  }
+  .card__review-svg{
+    fill: #fff;
+  }
+}
+.popup-review.show {
+  opacity: 1;
+  visibility: visible;
+  .callback__form {
+    margin-right: 25px;
+    @include response(480) {
+      margin-right: 0;
+    }
+  }
+}
+.callback__review-submit {
+  width: 100%;
+  height: 60px;
+  background: $green;
+  @include font(false,14,#fff,false,false,700);
+  text-transform: uppercase;
+  box-shadow: 0 18px 29px 0 rgba(#033e0a, 0.44);
+  transition: background 0.2s ease-in-out;
+  margin-top: 60px;
+  &:hover {
+    background: $lgreen;
+  }
+}

@@ -1,0 +1,51 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Кабинет пользователя'])
+  +heading('Кабинет пользователя')
+  .admin
+    ul.admin__nav
+      - var arr = ['профиль', 'история заказов', 'изменить личные данные', 'сменить пароль']
+      - var i = 0
+      for key in arr
+        if (i === 2)
+          li.admin__item.active
+            a(href="#").admin__link= key
+        else
+          li.admin__item
+            a(href="#").admin__link= key
+        - i++
+    .admin__description
+      .board
+        .board__avatar
+          +svg('user',55,55)
+        .board__description
+          .board__name Аркадий Иванович Дубровский
+          .board__subtitle это вы
+      form.form
+        .form__title пользователь
+        .form__block
+          input(type="text", id="change-profile-name", required).form__input
+          label(for="change-profile-name").form__label Имя
+          span.form__line
+        .form__block
+          input(type="text", id="change-profile-surname", required).form__input
+          label(for="change-profile-surname").form__label Отчество
+          span.form__line
+        .form__block
+          input(type="text", id="change-profile-family", required).form__input
+          label(for="change-profile-family").form__label Фамилия
+          span.form__line
+        .form__title контакты
+        .form__block
+          input(type="text", id="change-profile-email", required).form__input
+          label(for="change-profile-email").form__label Email
+          span.form__line
+        .form__block
+          input(type="text", id="change-profile-land", required).form__input
+          label(for="change-profile-land").form__label Страна
+          span.form__line
+        .form__block
+          input(type="text", id="change-profile-city", required).form__input
+          label(for="change-profile-city").form__label Город
+          span.form__line
+        button(type="submit").form__submit сохранить изменения

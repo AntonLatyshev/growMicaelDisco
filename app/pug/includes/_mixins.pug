@@ -1,0 +1,31 @@
+mixin image(source)
+  img(src='/catalog/view/theme/default/image/'+source, alt="image-description")&attributes(attributes)
+
+mixin data(source)
+  img(src='/image/data/'+source, alt="image-description")&attributes(attributes)
+
+mixin svg(icon, w, h)
+  svg(width=w, height=h)&attributes(attributes)
+    use(xlink:href="/catalog/view/theme/default/image/sprite.svg#"+icon)
+
+mixin breadcrumbs(array)
+  .breadcrumbs
+    ol(itemscope itemtype="http://schema.org/BreadcrumbList").breadcrumbs__list
+      each link, index in array
+        if (index == array.length - 1)
+          li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem").breadcrumbs__item
+            span(itemprop="name")= link
+            meta(itemprop="position" content=""+index)
+        else
+          li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem").breadcrumbs__item
+            a(itemscope itemtype="http://schema.org/Thing" itemprop="item" href="#").breadcrumbs__link
+              span(itemprop="name")= link
+            meta(itemprop="position" content=""+index)
+
+mixin button(buttonText)
+  a.button(href="#") #{buttonText}
+
+mixin heading(heading)
+  .heading
+    .heading__container
+      h2.heading__title= heading

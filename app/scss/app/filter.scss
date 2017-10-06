@@ -1,0 +1,168 @@
+.filter{
+  width: 300px;
+  @include response(1400) {
+    width: 200px;
+  }
+  &__heading{
+    @include font(rob,30,#000,false,false,700);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    position: relative;
+    @include response(1180) {
+      border:2px solid $green;
+      @include flex(row, wrap, center, center);
+      padding: 0;
+      height: 40px;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: $green;
+      position: absolute;
+      bottom:0;
+      left:0;
+      @include response(1180) {
+        display: none;
+      }
+    }
+  }
+  &__hidden{
+    @include response(1180) {
+      position: relative;
+      visibility: hidden;
+      opacity: 0;
+      position: fixed;
+      width: 100%;
+      min-height: 100%;
+      top: 0;
+      left: 0;
+      overflow: scroll;
+      @include flex(column, nowrap, flex-start, center);
+      padding-top: 30px;
+    }
+    &.open{
+      visibility: visible;
+      opacity: 1;
+      background: $dgreen;
+      z-index: 5;
+    }
+  }
+  &__reset{
+    width: 166px;
+    height: 40px;
+    border:1px solid #d6d6d6;
+    @include flex(row, wrap, center, center);
+    cursor: pointer;
+    margin-bottom: 35px;
+    @include response(1180) {
+      color: #fff;
+    }
+    &:hover{
+      .filter__reset-icon{
+        fill: $green;
+      }
+    }
+  }
+  &__reset-icon{
+    transition: fill .2s ease-in-out;
+    margin-right: 9px;
+    @include response(1180) {
+      fill: #fff;
+    }
+  }
+  &__reset-title{
+    @include response(1180) {
+      color: #fff;
+    }
+  }
+  &__section{
+    display: none;
+  }
+  &__options{
+    @include flex(column, nowrap, flex-start, flex-start);
+  }
+  &__title{
+    @include font(rob,18,#000,false,false,700);
+    margin-bottom: 25px;
+    cursor: pointer;
+    @include flex(row, wrap, flex-start, center);
+    @include response(1180) {
+      color: #fff;
+    }
+    &:hover {
+        .filter__arrow {
+            background: #f3f3f3;
+            @include response(1180) {
+              background: none;
+            }
+        }
+    }
+    &.open{
+      .filter__arrow{
+        transform: rotateX(180deg);
+      }
+    }
+  }
+  &__arrow{
+    margin-left: 13px;
+    padding: 5px;
+    transition: transform .4s ease-in-out;
+    @include response(1180) {
+      fill: #fff;
+    }
+  }
+  &__label{
+    @include flex(row, wrap, flex-start, center);
+    display: inline-flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+    &.selected{
+      .filter__link{
+        color: #000;
+        @include response(1180) {
+          color: #fff;
+        }
+        &::before{
+          border:1px solid rgba(#000,0);
+          background: $green;
+        }
+      }
+      .filter__value{
+        background: #daefe5;
+      }
+    }
+  }
+  &__input{
+    display: none;
+  }
+  &__link{
+    display: block;
+    @include font(rob,14,$dgreen,false,false,false);
+    text-decoration: none;
+    position: relative;
+    @include flex(row, wrap, flex-start, center);
+    @include response(1180) {
+      color: #fff;
+    }
+    &::before{
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      border:1px solid #d6d6d6;
+      margin-right: 13px;
+    }
+  }
+  &__value{
+    @include flex(row, wrap, center, center);
+    width: 31px;
+    height: 24px;
+    background: $lgray;
+    margin-left: 12px;
+    @include font(rob,false,#000,false,false,false);
+  }
+}

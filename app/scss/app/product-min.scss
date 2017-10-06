@@ -1,0 +1,147 @@
+.product-min {
+  width: 100%;
+  height: 170px;
+  @include flex(row, wrap, flex-end, center);
+  padding: 0 30px;
+  border-bottom:1px solid #dde4e1;
+  @include response(379) {
+    padding: 0 15px;
+  }
+  &__block {
+    width: 100%;
+    height: 110px;
+    @include flex(row, nowrap, flex-start, flex-start);
+    position: relative;
+    @include response(349) {
+        height: 140px;
+    }
+  }
+  &__basket-icon {
+    fill: #b2b2b2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transition: fill 0.2s ease-in-out;
+    &:hover {
+      fill: $green;
+    }
+  }
+  &__img {
+    width: 137px;
+    height: 110px;
+    background: $lgray;
+    margin-right: 20px;
+    flex-shrink: 0;
+    @include flex(row, wrap, center, center);
+    text-decoration: none;
+    img {
+      height: auto;
+    }
+  }
+  &__description {
+    flex-grow: 1;
+  }
+  &__title {
+    @include font(rob,16,#000,false,false,700);
+    margin-right: 50px;
+    max-height: 45px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: color .2s ease-in-out;
+    &:hover{
+      color: $green;
+    }
+  }
+  &__id {
+    @include font(false,13,#838383,false,false,false);
+    margin-bottom: 10px;
+    @include response(349) {
+        max-width: 100px;
+      word-wrap: break-word;
+    }
+  }
+  &__section {
+    @include flex(row, wrap, space-between, center);
+  }
+  &__container {
+    @include flex(row, wrap, flex-start, center);
+  }
+  &__quantity {
+    margin-right: 4px;
+    margin-top: 6px;
+  }
+  &__price {
+    @include font(rob,22,#000,false,false,700);
+  }
+  &__counter {
+    @include flex(row, wrap, center, center);
+  }
+  &__value {
+    width: 48px;
+    height: 25px;
+    background: #efefef;
+    margin: 0 5px;
+    @include flex(row, wrap, center, center);
+  }
+  &__button {
+    @include flex(row, wrap, center, center);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+  }
+  #decrement {
+    &:hover{
+      &::before{
+        content: "";
+        display: block;
+        background: $green;
+      }
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 7px;
+      height: 2px;
+      background: #000;
+      transition: background .2s ease-in-out;
+    }
+  }
+  #increment {
+    &:hover{
+      &::before{
+        content: "";
+        display: block;
+        background: $green;
+      }
+      &::after{
+        content: "";
+        display: block;
+        background: $green;
+      }
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 2px;
+      background: #000;
+      transition: background .2s ease-in-out;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 8px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      transition: background .2s ease-in-out;
+    }
+  }
+}

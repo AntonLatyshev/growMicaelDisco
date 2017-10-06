@@ -1,0 +1,42 @@
+footer.footer
+  .footer__container
+    .footer__description
+        a(href="#").footer__logo
+            +data('logo.png')
+        .footer__phone-block
+          a.footer__phone(href="tel:+380574831701") +38 (057) 483-17-01
+          a.footer__phone(href="tel:+380445001701") +38 (044) 500-17-01
+        .footer__social-block
+          a.social(href="#", target="_blank")
+            +svg('instagram',20,20)
+          a.social(href="#", target="_blank")
+            +svg('facebook',8,16)
+          a.social(href="#", target="_blank")
+            +svg('vk',18,10)
+        a(href="#", target="_blank").footer__developer Создание сайта
+          +svg('artlemon',72,32)
+    .footer__section
+      .footer__nav
+        .footer__catalog-btn каталог
+        ul.footer__menu
+          -var arr = ['О Комании', 'вопрос-ответ', 'партнерам', 'закупки', 'производство', 'контакты']
+          for item in arr
+            li.footer__item
+              a(href="#").footer__link= item
+      .footer__content
+        ul.footer-catalog
+          - var arr = ['Удобрения', 'Агрохимия', 'Аксессуары', 'Схемы и инструкции', 'Вентиляция', 'Гидропонические системы', 'Декор и дизайн', 'GROW BOX', 'Освещение', 'Субстраты', 'Защита растений', 'Кассеты, теплички, горшки', 'Приборы измерения', 'Капельный полив', 'Семена', 'Комиссионный отдел']
+          for key in arr
+            li.footer-catalog__item
+              a.footer-catalog__link(href="#")= key
+        form.footer-form
+          .footer-form__title Подпишитесь на наши новости, и получайте горячие предложения первыми.
+          input(type="text", placeholder="Ваш E-mail").footer-form__input
+          button(type="submit").footer-form__submit
+  .footer__bottom
+    .footer__copyright © Grow.in.ua, 2017. Все права защищены
+    ul.footer__terms
+      - var arr = ['Пользовательское соглашение ', 'Правила использования', 'Карта сайта']
+      for key in arr
+        li.footer__terms-item
+          a(href="#").footer__terms-link= key

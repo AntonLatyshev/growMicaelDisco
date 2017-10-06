@@ -1,0 +1,54 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Доставка и оплата'])
+  +heading('Доставка и оплата')
+  .delivery
+    .delivery__anchor
+      a(href="#pay").anchor-btn.pay-btn.active про оплату
+      a(href="#delivery").anchor-btn.delivery-btn о доставке
+    .delivery__container#pay
+      .delivery__head
+        +data('payment-bg.jpg').delivery__bg
+        +data('delivery.png').delivery__img
+        .delivery__title Оплата
+      .section
+        - var arr = [{icon: '', name: 'Наличный расчет', text: 'Наличными менеджеру или курьеру новой почты вы можете оплатить заказ наличными менеджеру в нашем магазине или  курьеру новой почты наложенным платежом оплата товара происходит при его получении на складе новой почты.'}, {icon: '', name: 'Другие способы оплаты', text: 'По тарифам и правилам: новая почта. возможна оплата, как наложенным платежом, так и по предоплате. Отправки заказов перевозчиком осуществляются каждый день с понедельника по субботу.'}, {icon: '', name: 'Безналичный расчет', text: 'На карту приват банка с карты приват банка приват 24 оплата производится переводом денежных средств с вашей карты приват банка.  При этом будет дополнительно сниматься комиссия за услуги терминала.'}]
+        for key in arr
+          .delivery__block
+            .delivery__icon
+            .delivery__subtitle= key.name
+            .delivery__text= key.text
+    .delivery__container#delivery
+      .delivery__head
+        +data('delivery-bg.jpg').delivery__bg
+        +data('payment.png').delivery__img
+        .delivery__title Доставка
+      .section.section--pay
+        - var arr = [{icon: '', name: 'Новая почта', text: 'По тарифам и правилам: новая почта. возможна оплата, как наложенным платежом, так и по предоплате. Отправки заказов перевозчиком осуществляются каждый день с понедельника по субботу.'}, {icon: '', name: 'Курьер службой такси:', text: 'В течении часа после оплаты заказа на карту приват банка. цена доставки не зависит от веса и объема заказа. Доставка осуществляется каждый день с понедельника по субботу.'}, {icon: '', name: 'Cамовывоз', text: 'Заказанные товары вы можете забрать с нашего магазина по проспекту воздухофлотский 5 (вход со двора). с Пнд. по Птн. с 10:00 до 19:00, в Суб. - с 11:00 до 15:00. в Вскр. отгрузка товара не выполняется.'}]
+        for key in arr
+          .delivery__block
+            .delivery__icon
+            .delivery__subtitle= key.name
+            .delivery__text= key.text
+  .callback-block.delivery-inside
+    .callback-block__container(style="background-image:url(/image/data/delivery-contact-bg.png)")
+      form.callback-block__form(style="background-image:url(/image/data/callback-block-form-bg.jpg)")
+        .callback__title Обратный звонок
+        .callback__block
+          input(type="text", id="name", required).callback__input
+          label(for="name").callback__label Ваше имя
+          span.callback__line
+        .callback__block
+          input(type="text", id="phone", required).callback__input
+          label(for="phone").callback__label Номер телефона
+          span.callback__line
+        .callback__block
+          textarea(type="text", id="textarea", required).callback__textarea
+          label(for="textarea").callback__label Сообщение
+          span.callback__line
+        button(type="submit").callback__submit отправить
+      .callback-block__description
+        +data('logo-dark.png').callback-block__logo
+        .callback-block__title Мы подберем для вас оптимальный
+          span.yellow товар
+        .callback-block__subtitle Напишите нам, наш менеджер перезвонит вам в ближайшее время.

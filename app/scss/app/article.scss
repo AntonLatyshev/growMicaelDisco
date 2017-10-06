@@ -1,0 +1,230 @@
+.article{
+  width: 1410px;
+  margin: 0 auto;
+  @include flex(row, wrap, center, flex-start);
+  position: relative;
+  @include response(1430) {
+    width: 100%;
+  }
+  &__container{
+    width: 683px;
+    padding-top: 90px;
+    @include response(700) {
+      width: 100%;
+      padding-top: 60px;
+    }
+  }
+  &__head{
+    @include flex(row, nowrap, flex-start, flex-start);
+    height: 140px;
+    margin-bottom: 20px;
+  }
+  &__date{
+    width: 106px;
+    flex: 0 0 106px;
+    @include flex(column, wrap, flex-start, center);
+    height: 100%;
+    border-right: 1px solid #000;
+    margin-right: 26px;
+  }
+  &__title{
+    @include font(rob,24,#000,false,false,700);
+    @include flex(row, wrap, flex-start, center);
+    flex: 1 1 auto;
+    padding: 0 0 7px;
+    height: 100%;
+    @include response(480) {
+      font-size: 18px;
+    }
+  }
+  &__img{
+    margin-bottom: 30px;
+    width: 100%;
+    @include response(1180) {
+      height: auto;
+    }
+  }
+  &__content{
+    padding-left: 120px;
+    @extend %text;
+    @include response(480) {
+      padding: 0 3%;
+    }
+  }
+  &__slide{
+    width: 100%;
+    height: 286px;
+  }
+  &__current{
+    width: 110px;
+    margin: 0 auto 25px;
+    @include flex(row, wrap, center, baseline);
+    span{
+      @include font(rob,14,#000,false,false,700);
+    }
+    .current-first{
+      font-size: 30px;
+    }
+  }
+  .slick-next,
+  .slick-prev {
+    width: 12px;
+    height: 18px;
+    background: rgba(#18241e, 0);
+    @include flex(row, wrap, center, center);
+    bottom: -30px;
+    z-index: 1;
+    transition: all .2s ease-in-out;
+    &::before {
+      content: "";
+      display: block;
+      @extend %icon-arrow-carousel-black;
+      opacity: 1;
+      transition: all .2s ease-in-out;
+      margin: -8px 0 0 -5px;
+    }
+  }
+  .slick-prev {
+    left: 225px;
+    @include response(480) {
+      left: 5%;
+    }
+    &::before{
+      content: "";
+      display: block;
+      transform: rotate(180deg);
+    }
+  }
+  .slick-next{
+    right: 225px;
+    @include response(480) {
+      right: 5%;
+    }
+  }
+  .slick-next:focus,
+  .slick-prev:focus{
+    background: rgba(#009249,0);
+  }
+  .slick-next:hover,
+  .slick-prev:hover {
+    background: rgba(#009249,0);
+    box-shadow: 0 18px 29px 0 rgba(3, 62, 10, 0);
+  }
+  &__video{
+    width: 100%;
+    height: 296px;
+    margin: 25px 0;
+    @include flex(row, wrap, center, center);
+  }
+  .video-btn {
+    &__icon {
+      display: block;
+      @extend %icon-video-btn;
+    }
+  }
+  &__prev{
+    width: 363px;
+    @include flex(row, wrap, flex-start, center);
+    @include font(false,12,#000,false,false,700);
+    display: inline-flex;
+    position: absolute;
+    top:150px;
+    left:0;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+    @include response(1430) {
+      padding-left: 30px;
+    }
+    @include response(1180) {
+      top: 30px;
+    }
+    @include response(480) {
+      display: none;
+    }
+    &.fixed{
+      position: fixed;
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: $green;
+      margin-left: 10px;
+      transition: width .2s ease-in-out;
+    }
+    @include desktop-hover(){
+      color: $green;
+      &::after{
+        content: "";
+        display: block;
+        width: 10px;
+      }
+    }
+  }
+  &__next{
+    width: 363px;
+    @include flex(row, wrap, flex-end, center);
+    @include font(false,12,#000,false,false,700);
+    display: inline-flex;
+    text-transform: uppercase;
+    position: absolute;
+    top:150px;
+    right: 0;
+    text-decoration: none;
+    transition: color .2s ease-in-out;
+    @include response(1430) {
+      padding-right: 30px;
+    }
+    @include response(1180) {
+      top: 30px;
+    }
+    @include response(480) {
+      display: none;
+    }
+    &.fixed{
+      position: fixed;
+    }
+    &::before{
+      content: "";
+      display: block;
+      width: 30px;
+      height: 1px;
+      background: $green;
+      margin-right: 10px;
+      transition: width .2s ease-in-out;
+    }
+    @include desktop-hover(){
+      color: $green;
+      &::before{
+        content: "";
+        display: block;
+        width: 10px;
+      }
+    }
+  }
+}
+.article-more{
+  width: 683px;
+  margin: 0 auto 90px;
+  @include response(700) {
+    width: 100%;
+  }
+  &__title{
+    @include font(rob,36,#000,false,false,700);
+    text-transform: uppercase;
+    margin-bottom: 55px;
+    @include response(480) {
+      font-size: 24px;
+      padding: 0 3%;
+    }
+  }
+  &__container{
+    @include flex(column, wrap, flex-start, center);
+  }
+  .blog-list__block{
+    margin-right: 0;
+    width: 100%;
+  }
+}

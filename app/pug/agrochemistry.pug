@@ -1,0 +1,15 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Агрохимия'])
+  +heading('Агрохимия')
+  .agrochemistry
+    - i = 0
+    while (i < 8)
+      a(href="#", style="background-image:url(/image/data/agrochemistry-1.jpg)").agrochemistry__block
+        span.agrochemistry__title ADVANCED HYDROPONICS of Holland
+        span.agrochemistry__value 25
+        - i++
+  .agrochemistry-callback
+    .agrochemistry-callback__container
+      include ./includes/_callback-form-big.pug
+      +data('callback-block-form-img.jpg').agrochemistry-callback__img

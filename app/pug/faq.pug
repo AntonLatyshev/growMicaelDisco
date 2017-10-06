@@ -1,0 +1,36 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Вопрос ответ'])
+  +heading('Вопрос ответ')
+  .faq
+    .faq__container
+      - var i = 0;
+      while (i < 5)
+        .faq__block
+          .faq__head
+            .faq__title Как оплатить заказ на новой почте?
+            .faq__open
+              +svg('arrow-down',20,14).faq__open-icon
+              +svg('close',14,14).faq__close-icon
+          .faq__section
+            .faq__subtitle Ответ:
+            .faq__text.
+              Неплохо, думал за такую цену будет что-то хуже чем на фото. Инструментом пользуюсь редко, покупать дорогой как то жалко. Пока сверлил только дерево, как дрель вполне нормально работает. попробовал как ударную, слабовато, кирпич возьмет, бетон возьмет, а сверлить, удар слабоват. Аккуратно собрана, внешне приятна, как дрель нормально, и конечно же приятная ЦЕНА! За эти деньги смешно искать недостатки.
+            - i++
+      include ./includes/_pagination.pug
+    .faq__form
+      form.callback-block__form(style="background-image:url(/image/data/callback-block-form-bg.jpg)")
+        .callback__title Обратный звонок
+        .callback__block
+          input(type="text", id="name", required).callback__input
+          label(for="name").callback__label Ваше имя
+          span.callback__line
+        .callback__block
+          input(type="text", id="phone", required).callback__input
+          label(for="phone").callback__label Номер телефона
+          span.callback__line
+        .callback__block
+          textarea(type="text", id="textarea", required).callback__textarea
+          label(for="textarea").callback__label Сообщение
+          span.callback__line
+        button(type="submit").callback__submit отправить

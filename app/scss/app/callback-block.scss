@@ -1,0 +1,117 @@
+.callback-block {
+  width: 100%;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 310px;
+    background-image: url('/image/data/callback-block-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: -65px;
+    left: 0;
+  }
+  &__container {
+    width: 1410px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: relative;
+    z-index: 1;
+    @include flex(row, wrap, flex-start, flex-start);
+    @include response(1430) {
+      width: 100%;
+      padding: 0 3%;
+    }
+    @include response(1180) {
+      background-image: none !important;
+    }
+    @include response(960) {
+      justify-content: center;
+      height: auto;
+      margin-bottom: 60px;
+    }
+  }
+  &__form {
+    width: 533px;
+    box-shadow: 0 8px 29px 0 rgba(0, 0, 0, 0.74);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    padding: 100px;
+    margin-bottom: 85px;
+    .contact-description {
+        padding: 0 60px 42px 80px;
+    }
+    .callback__submit {
+        margin-top: 30px;
+    }
+    @include response(580) {
+      width: 100%;
+      padding: 30px 30px;
+      height: auto;
+    }
+  }
+  &__description {
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 135px;
+    @include response(960) {
+      display: none;
+    }
+  }
+  &__logo {
+    width: 140px;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+  &__title {
+    @include font(rob,24,#000,false,false,700);
+    position: relative;
+    .yellow {
+      display: inline-block;
+      @include font(rob,24,#000,false,false,700);
+      background: #f4bc10;
+      margin-left: 4px;
+      padding: 0 3px;
+      margin-bottom: 15px;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 41px;
+      height: 1px;
+      background: $green;
+      position: absolute;
+      top: 17px;
+      left: -59px;
+    }
+  }
+  &__subtitle {
+    @include font(false,16,#666666,false,20,false);
+  }
+}
+.card-wrapper{
+  .callback-block__container{
+    justify-content: flex-end;
+    padding: 0;
+    padding-right: 50px;
+
+  }
+  .callback-block__form{
+    order: 2;
+  }
+  .callback-block__description{
+    margin-left: 0;
+    margin-right: 125px;
+  }
+  .callback-block__title{
+    &::before{
+      left: auto;
+      right: -59px;
+    }
+  }
+}

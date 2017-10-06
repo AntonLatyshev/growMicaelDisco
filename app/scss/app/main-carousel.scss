@@ -1,0 +1,129 @@
+.main-carousel {
+  width: 1410px;
+  height: 670px;
+  margin: 0 auto 90px;
+  @include response(1430) {
+    width: 100%;
+  }
+  @include response(480) {
+    height: auto;
+  }
+  &__slide {
+    width: 100%;
+    height: 670px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 8px 29px 0 rgba(#000, 0.28);
+    position: relative;
+    outline: none;
+    @include response(480) {
+      height: 100vh !important;
+    }
+  }
+  &__yellow-block {
+    display: block;
+    width: 360px;
+    height: 592px;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    margin-top: -293px;
+    z-index: 1;
+    @include response(1180) {
+      right: 5%;
+    }
+    @include response(480) {
+      visibility: hidden;
+    }
+  }
+  &__img {
+    display: block;
+    width: 556px;
+    height: 506px;
+    position: absolute;
+    top: 50%;
+    right: 180px;
+    transform:translate3d(0,-50%,0);
+    z-index: 2;
+    @include response(1180) {
+      right: 5%;
+    }
+    @include response(920) {
+      width: 400px;
+      height: auto;
+      margin-top: 0;
+    }
+    @include response(480) {
+      visibility: hidden;
+    }
+  }
+  &__block {
+    width: 240px;
+    position: relative;
+    left: 250px;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+    @include response(1180) {
+      left: 5%;
+    }
+    @include response(480) {
+      left: 50%;
+      transform:translate3d(-50%,-50%,0);
+    }
+  }
+  &__title {
+    @include font(rob,72,#fff,false,70,700);
+    margin-bottom: 5px;
+  }
+  &__subtitle {
+    @include font(false,14,#fff,false,false,700);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  &__line-bottom {
+    position: relative;
+    width: 720px;
+    height: 4px;
+    background: $green;
+    position: absolute;
+    bottom: -40px;
+    left: 102px;
+    z-index: -1;
+    @include response(920) {
+      display: none;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 22px;
+      background: $green;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+  &__line-top {
+    display: block;
+    width: 400px;
+    height: 4px;
+    background: $green;
+    position: absolute;
+    top: 62px;
+    right: -400px;
+    z-index: -1;
+    @include response(920) {
+      display: none;
+    }
+  }
+  .slick-prev{
+    bottom: 0;
+    right: 68px;
+  }
+  .slick-next {
+    bottom: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,576 @@
+.card {
+  width: 1410px;
+  margin: 90px auto;
+  @include flex(row, wrap, space-between, flex-start);
+  @include response(1400) {
+    width: 100%;
+    padding: 0 3%;
+    flex-wrap: nowrap;
+  }
+  @include response(1180) {
+    flex-wrap: wrap;
+  }
+  &__section {
+    width: 682px;
+    @include response(1400) {
+      margin-right: 15px;
+      width: auto;
+    }
+    @include response(1180) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &__description {
+    width: 685px;
+    @include response(1400) {
+      width: 640px;
+    }
+    @include response(1180) {
+      width: 100%;
+    }
+  }
+  .slick-vertical .slick-slide {
+    height: 92px;
+  }
+  .share::before {
+    display: none;
+  }
+  &__head {
+    @include flex(row, wrap, space-between, flex-start);
+  }
+  &__content {
+    width: 444px;
+    @include response(1400) {
+      width: 414px;
+    }
+    @include response(480) {
+      width: 100%;
+    }
+  }
+  &__top {
+    @include flex(row, wrap, flex-start, center);
+    margin-bottom: 30px;
+  }
+  &__id {
+    width: 138px;
+    height: 42px;
+    border: 1px solid #e5e5e5;
+    @include font(false,14,#000,false,false,false);
+    @include flex(row, wrap, center, center);
+    @include response(480) {
+      margin-bottom: 40px;
+      width: 50%;
+    }
+  }
+  &__availability {
+    width: 138px;
+    height: 42px;
+    border: 1px solid #e5e5e5;
+    @include font(false,14,#000,false,false,false);
+    @include flex(row, wrap, center, center);
+    position: relative;
+    @include response(480) {
+      margin-bottom: 40px;
+      width: 50%;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: $green;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  &__raiting {
+    width: 138px;
+    @include flex(row, wrap, center, center);
+  }
+  &__raiting-block {
+    @include flex(row, wrap, flex-start, baseline);
+    margin-left: 6px;
+    width: 58px;
+    height: 20px;
+    border-radius: 10px;
+    background: #daefe5;
+    padding-left: 10px;
+    position: relative;
+  }
+  &__raiting-val {
+    @include font(rob,false,#000,false,false,false);
+  }
+  &__raiting-total {
+    @include font(rob,10,#000,false,false,false);
+  }
+  &__raiting-icon {
+    fill: $green;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate3d(0, -50%, 0);
+    svg {
+
+    //   display: none;
+    //   position: absolute;
+    //   top: 50%;
+    //   right: 10px;
+    //   transform: translate3d(0, -50%, 0);
+    }
+  }
+  &__packaging {
+    width: 100%;
+    @include flex(row, wrap, flex-start, center);
+    margin-bottom: 30px;
+    @include response(480) {
+      flex-wrap: nowrap;
+    }
+  }
+  &__price-block {
+    margin-bottom: 30px;
+    @include flex(row, wrap, flex-start, center);
+  }
+  &__price {
+    @include font(rob,22,#000,false,false,700);
+    margin-right: 20px;
+  }
+  &__price-old {
+    @include font(rob,14,#000,false,false,700);
+    margin-right: 20px;
+    text-decoration: line-through;
+  }
+  &__sale {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f4bc10;
+    @include flex(row, wrap, center, center);
+    @include font(false,12,#000,false,false,false);
+  }
+  &__button {
+    @include flex(row, wrap, flex-start, center);
+    margin-bottom: 35px;
+  }
+  &__buy {
+    width: 198px;
+    height: 60px;
+    background: $green;
+    @include flex(row, wrap, center, center);
+    @include font(false,14,#fff,false,false,700);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    margin-right: 20px;
+    @include response(1400) {
+      margin-right: 17px;
+    }
+    @include response(480) {
+      width: 50%;
+      margin-right: 0;
+      font-size: 12px;
+    }
+    &:hover {
+      background: darken($green,10%);
+    }
+  }
+  &__buy-onclick {
+    width: 198px;
+    height: 60px;
+    background: $lgray;
+    @include flex(row, wrap, center, center);
+    @include font(false,14,#000,false,false,700);
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    @include response(480) {
+      width: 50%;
+      font-size: 12px;
+    }
+    &:hover {
+      background: darken($lgray,10%);
+    }
+  }
+  &__review-raiting {
+    box-shadow: 0 6px 25px 0 rgba(#000, 0.15);
+    width: 202px;
+    height: 166px;
+    padding: 25px 30px;
+    @include response(1400) {
+      width: 179px;
+      padding: 25px 20px;
+    }
+    @include response(480) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  &__review-title {
+    margin-bottom: 15px;
+  }
+  &__review-container {
+    width: 100%;
+    @include flex(row, wrap, center, flex-end);
+  }
+  &__review-block {
+    width: 20%;
+    @include flex(column, wrap, flex-end, center);
+    cursor: pointer;
+  }
+  &__review-svg {
+    fill: #bdbdbd;
+  }
+  &__review-position {
+    @include font(rob,false,#000,false,false,700);
+    margin-top: 10px;
+  }
+}
+.card-carousel {
+  width: 100%;
+  // @include flex(row, wrap, space-between, center);
+  &::after {
+      content: "";
+      display: block;
+      clear: both;
+  }
+  @include response(1400) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+.card-carousel-nav {
+  width: 120px;
+  float: left;
+  padding: 41px 0;
+  // @include flex(column, wrap, flex-start, flex-end);
+  position: relative;
+  @include response(764) {
+    display: none;
+  }
+  .slick-prev:hover {
+      box-shadow: 0 -13px 29px 0 rgba(3, 62, 10, 0.44);
+  }
+  .slick-prev,
+  .slick-next {
+      &:hover {
+          background: #009249;
+          box-shadow: none;
+      }
+      &::before {
+          margin: -5px 0 0 -6px;
+      }
+    //   &.slick-disabled {
+    //       display: none;
+    //   }
+  }
+  &__slide {
+    width: 110px;
+    height: 92px;
+    @include flex(row, wrap, center, center);
+    display: flex !important;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease-in-out;
+    &::before {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 0;
+      background: $green;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: height 0.2s ease-in-out;
+    }
+  }
+  &__img {
+    width: 90%;
+    height: auto;
+  }
+  .slick-current {
+    background: $lgray;
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+    }
+  }
+  .slick-next,
+  .slick-prev {
+    width: 120px;
+    height: 30px;
+    background: transparent;
+  }
+  .slick-prev {
+    top: 0px;
+    left: 0;
+  }
+  .slick-next {
+    bottom: 0;
+    left: 0;
+  }
+  .slick-prev::before {
+    transform: rotate(-90deg);
+    @extend %icon-pagination-arrow;
+  }
+  .slick-next::before {
+    transform: rotate(90deg);
+    @extend %icon-pagination-arrow;
+  }
+  .slick-next:focus,
+  .slick-prev:focus {
+    background: transparent;
+  }
+}
+.card-carousel-for {
+  width: 562px;
+  height: 450px;
+  float: left;
+  @include response(1400) {
+    width: 480px;
+  }
+  @include response(1300) {
+    width: 400px;
+  }
+  @include response(1180) {
+    width: 800px;
+  }
+  @include response(960) {
+    width: 599px;
+  }
+  @include response(764) {
+    width: 100%;
+    float: none;
+  }
+  .slick-slide {
+    height: 450px !important;
+    @include response(480) {
+      height: auto !important;
+    }
+  }
+  &__slide {
+    width: 100%;
+    height: 450px;
+    background: $lgray;
+    @include flex(row, wrap, center, center);
+    display: flex !important;
+    outline: none;
+    @include response(1180) {
+      padding: 20px;
+    }
+    img {
+      height: auto;
+      @include response(1300) {
+        max-width: 94%;
+      }
+    }
+  }
+  .slick-prev {
+    top: 50%;
+    left: 0;
+    margin-top: -34px;
+    width: 30px;
+  }
+  .slick-next {
+    top: 50%;
+    right: 0;
+    margin-top: -34px;
+    width: 30px;
+  }
+}
+.card-tab {
+  box-shadow: 0 6px 25px 0 rgba(#000, 0.15);
+  width: 685px;
+  @include response(1400) {
+    width: 100%;
+  }
+  .tab__list {
+    @include flex(row, nowrap, flex-start, center);
+    list-style: none;
+    padding: 0;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 0 30px;
+    @include response(480) {
+      padding: 0 3%;
+    }
+  }
+  .tab__item {
+    margin-right: 30px;
+    @include response(480) {
+      margin-right: 9px;
+    }
+    &.active {
+      .tab__link {
+        color: $green;
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .tab__link {
+    @include font(false,12,#000,false,false,700);
+    text-decoration: none;
+    text-transform: uppercase;
+    @include flex(row, wrap, center, center);
+    height: 63px;
+    position: relative;
+    @include response(480) {
+      font-size: 8px;
+    }
+    @include desktop-hover() {
+      color: $green;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $green;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      transition: width 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+  }
+  .tab__container {
+    padding: 30px;
+    @extend %text;
+    @include response(480) {
+      padding: 30px 3%;
+    }
+  }
+  .about-block__video {
+    width: 100%;
+    height: 365px;
+  }
+}
+.review {
+  border-bottom: 2px solid #f0f0f0;
+  margin-bottom: 35px;
+  &__head {
+    @include flex(row, wrap, flex-start, center);
+    position: relative;
+    margin-bottom: 25px;
+  }
+  &__content {
+    margin-bottom: 20px;
+  }
+  &__quote {
+    margin-right: 17px;
+    @include response(480) {
+      margin-right: 6px;
+    }
+  }
+  &__name {
+    @include font(false,16,#000,false,false,700);
+    margin-right: 17px;
+    @include response(480) {
+      margin-right: 6px;
+      @include response(480) {
+        font-size: 12px;
+      }
+    }
+  }
+  &__date {
+    @include font(false,false,#bfbfbf,false,false,false);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate3d(0,-50%,0);
+    @include response(480) {
+      font-size: 12px;
+    }
+  }
+}
+.valuation {
+  @include flex(row, wrap, flex-end, center);
+  margin-bottom: 30px;
+  &__event {
+    @include flex(row, wrap, center, center);
+    margin-right: 26px;
+    cursor: pointer;
+    &.active {
+      .valuation__icon {
+        fill: #000;
+      }
+      .valuation__value {
+        color: #000;
+      }
+    }
+    &:hover {
+      .valuation__icon {
+        fill: #2b2b2b;
+      }
+      .valuation__value {
+        color: #2b2b2b;
+      }
+    }
+  }
+  &__icon {
+    margin-right: 8px;
+    fill: #b5b5b5;
+    transition: fill 0.14s ease-in-out;
+  }
+  &__value {
+    color: #b5b5b5;
+    transition: color 0.14s ease-in-out;
+  }
+}
+.card__review-container {
+  flex-direction: row-reverse;
+  input[type="radio"] {
+    display: none;
+  }
+  .card__review-svg {
+    fill: #b5b5b5;
+    transition: fill 0.14s ease-in-out;
+  }
+  .card__review-block:hover,
+  .card__review-block:hover ~ .card__review-block {
+    .card__review-svg {
+      fill: $green;
+    }
+  }
+  input[type = "radio"]:checked ~ .card__review-block {
+    .card__review-svg {
+      fill: $green;
+    }
+  }
+}
+.review-bottom {
+  @include flex(row, wrap, space-between, center);
+  .pagination {
+    width: auto;
+    margin: 0;
+  }
+}
+.review-edit {
+  width: 202px;
+  height: 51px;
+  @include flex(row, wrap, center, center);
+  border: 1px solid #d6d6d6;
+  &__icon {
+    margin-right: 12px;
+    fill: #000;
+  }
+  @include response(480) {
+    margin: 30px auto 0;
+  }
+}
+.review__raiting-title{
+  @include response(480) {
+    display: none;
+  }
+}
+.card-wrapper{
+  .features__container{
+    margin-bottom: 60px;
+  }
+  .callback-block__container{
+    @include response(960) {
+      justify-content: center;
+      padding: 0;
+    }
+  }
+}

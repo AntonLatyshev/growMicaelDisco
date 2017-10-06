@@ -1,0 +1,154 @@
+.features {
+  width: 100%;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 315px;
+    background: $dgreen;
+    position: absolute;
+    top: 84px;
+    left: 0;
+  }
+  &__container {
+    width: 1410px;
+    margin: 0 auto 90px;
+    @include response(1430) {
+      width: 100%;
+      padding: 0 3%;
+    }
+    @include response(1180) {
+      margin-bottom: 240px;
+    }
+  }
+  .product {
+    margin: 0 19px;
+    @include response(480) {
+      margin: 0 8px;
+    }
+  }
+  .tab {
+    &__head {
+      @include flex(row, wrap, space-between, center);
+      position: relative;
+      @include response(920) {
+        @include flex(column, nowrap, center, flex-start);
+        height: 140px;
+        height: auto;
+        padding: 30px 0;
+      }
+      @include response(480) {
+        height: 220px;
+        justify-content: flex-start;
+        padding-top: 30px;
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 1564px;
+        height: 140px;
+        background: $dgreen;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate3d(-50%,0,0);
+        @include response(1600) {
+          width: 100vw;
+        }
+      }
+    }
+    &__title {
+      @include font(rob,36,#fff,false,false,false);
+      text-transform: uppercase;
+      position: relative;
+      height: 140px;
+      width: 100%;
+      z-index: 1;
+      @include flex(row, wrap, flex-start, center);
+      @include response(1180) {
+        font-size: 24px;
+      }
+      @include response(920) {
+        margin-bottom: 30px;
+        height: auto;
+      }
+      @include response(480) {
+        margin-bottom: 15px;
+      }
+    }
+    &__list {
+      height: 140px;
+      @include flex(row, wrap, flex-end, center);
+      padding: 0;
+      list-style: none;
+      padding-right: 194px;
+      position: relative;
+      z-index: 1;
+      @include response(920) {
+        padding-right: 0;
+        justify-content: flex-start;
+        height: auto;
+      }
+    }
+    &__item {
+      margin-left: 55px;
+      @include response(920) {
+        margin-right: 55px;
+        margin-left: 0;
+      }
+      @include response(480) {
+        margin-right: 20px;
+      }
+      &.active {
+        .tab__link {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &__link {
+      @include font(false,14,#fff,false,false,700);
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #f4bc10;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+    }
+    &__container {
+        // .content-block {
+        //     display: block;
+        // }
+    }
+  }
+  .slick-prev {
+    top: -106px;
+    right: 68px;
+    z-index: 3;
+    @include response(480) {
+      top: -107px;
+    }
+  }
+  .slick-next {
+    top: -106px;
+    right: 0;
+    z-index: 3;
+    @include response(480) {
+      top: -107px;
+    }
+  }
+  .tab__container {
+    overflow: visible;
+  }
+}

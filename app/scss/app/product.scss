@@ -1,0 +1,81 @@
+.product{
+  width: 323px;
+  transition: box-shadow .2s ease-in-out;
+  box-shadow: 0px 5px 25px 0px rgba(#000, 0.1);
+  position: relative;
+  @include desktop-hover(){
+    box-shadow: 0px 18px 29px 0px rgba(3, 62, 10, 0.44);
+  }
+  &__img{
+    width: 100%;
+    height: 258px;
+    background: $lgray;
+    @include flex(row, wrap, center, center);
+    img{
+    //   max-height: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__description{
+    width: 100%;
+    height: 186px;
+    padding: 30px 38px 0;
+    background: #fff;
+  }
+  &__text{
+    @include font(false,16,#666,false,24,false);
+    display: none;
+    height: 48px;
+    overflow: hidden;
+  }
+  &__button{
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    @include flex(row, wrap, center, center);
+    @include font(false,false,#fff,false,false,700);
+    text-transform: uppercase;
+    text-decoration: none;
+    background: $dgreen;
+    transition: background .2s ease-in-out;
+    &:hover{
+      background: $green;
+    }
+  }
+  &__title{
+    @include font(false,16,#000,false,false,700);
+    height: 37px;
+    overflow: hidden;
+    text-decoration: none;
+    margin-bottom: 0px;
+    transition: color .2s ease-in-out;
+    display: inline-block;
+    &:hover{
+      color: $green;
+    }
+  }
+  &__id{
+    @include font(false,13,#838383,false,false,false);
+    margin-bottom: 15px;
+  }
+  &__availability{
+    @include flex(row, wrap, flex-start, center);
+    margin-bottom: 10px;
+    &::before{
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $green;
+      margin-right: 10px;
+    }
+  }
+  &__price{
+    @include font(rob,22,#000,false,false,700);
+  }
+  .small{
+    @include font(rob,16,#000,false,false,700);
+  }
+}

@@ -1,0 +1,49 @@
+.share{
+  margin-top: 65px;
+  margin-bottom: 90px;
+  @include flex(row, wrap, center, center);
+  position: relative;
+  &::before{
+    content: "";
+    display: block;
+    width: 58px;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    top:-30px;
+    left:50%;
+    margin-left: -29px;
+  }
+  &__title{
+    @include font(false,12,#000,false,false,700);
+    text-transform: uppercase;
+    margin: 0 8px;
+  }
+}
+.social-likes{
+  @include flex(row, wrap, flex-start, center);
+}
+.social-likes__widget_facebook{
+  display: block;
+  width: 70px;
+  height: 40px;
+  border:1px solid rgba(#404040,.1);
+  @include flex(row, wrap, center, center);
+  cursor: pointer;
+  margin: 0 8px;
+  .icon{
+    @extend %icon-facebook;
+  }
+}
+.social-likes__widget_vkontakte{
+  display: block;
+  width: 70px;
+  height: 40px;
+  border:1px solid rgba(#404040,.1);
+  @include flex(row, wrap, center, center);
+  cursor: pointer;
+  margin: 0 8px;
+  .icon{
+    @extend %icon-vk;
+  }
+}

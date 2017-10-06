@@ -1,0 +1,182 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Оформление заказа'])
+  +heading('Оформление заказа')
+  .basket#basket
+    .cart-holder
+      .cart-row
+        .cart-from
+          .step.step-1
+            .step-heading
+              span.label
+                | шаг №1, Контактные данные
+                //- a.edit(href='#') Редактировать
+            .step-hidden
+              .login-success
+                form(action='#')
+                  .row.name
+                    input(type='text', value='Дмитрий Шмалько')
+                  .row.city
+                    input(type='text', value='Харьков')
+                    span.city-example
+                      | Например,
+                      a(href='#') Харьков
+                  .row
+                    input(type='tel', placeholder='Телефон *')
+                  .row.row-box
+                    button.button-enter(type="button") Далее
+              .not-login
+                ul.form-tab-nav
+                  li.active
+                    a(href='#new-customer') Новый покупатель
+                  li
+                    a(href='#old-customer') Постоянный клиент
+                .cart-froms-tab
+                  // new customer form
+                  #new-customer.tab.new-customer.active
+                    form(action='')
+                      .row
+                        label(for='with-register')
+                          input#with-register(type='checkbox')
+                          span Оформить заказ с регистрацией
+                      .row.name
+                        input(type='text', placeholder='Имя и фамилия *')
+                      .row.city
+                        input(type='text', placeholder='Город *')
+                        span.city-example
+                          | Например,
+                          a(href='#') Харьков
+                      .row
+                        input(type='tel', placeholder='Телефон *')
+                      .hidden-row
+                        .row
+                          input(type='email', placeholder='Email *')
+                        .row.password
+                          input(type='password', placeholder='Введите пароль')
+                        .row.password
+                          input(type='password', placeholder='Подтвердите пароль')
+                      .row.row-box
+                        button.button-enter(type="button") шаг №2
+                  // old customer  form
+                  #old-customer.tab.old-customer
+                    form#login-form(action='#')
+                      .row
+                        input(type='email', placeholder='Email *')
+                      .row.password
+                        input(type='password', placeholder='Пароль')
+                      .row.row-box
+                        .button-enter(type="button") Войти
+                        a.forgot-passwd(href='#') Я забыл пароль
+          .step.step-2
+            .step-heading
+              span.label шаг №2, способ доставки
+            .step-hidden.delivery
+              .col.col-1
+                .row
+                  label(for='our-store')
+                    input#our-store(type='radio', name='delivery')
+                    span Из нашего магазина  (бесплатно)
+                .select(data-radio='our-store')
+                  .row
+                    select(name='', id='')
+                      option(value='1') Склад №1, Пушкинская, 51
+                      option(value='1') Склад №2, Пушкинская, 52
+                      option(value='1') Склад №3, Пушкинская, 53
+                .row
+                  label(for='np')
+                    input#np(type='radio', name='delivery')
+                    span Из отделения «Новой Почты»  (35 грн)
+                .select(data-radio='np')
+                  .row
+                    select
+                      option(value='1') Харьков
+                      option(value='1') Киев
+                      option(value='1') Склад №3, Пушкинская, 53
+                  .row
+                    select
+                      option(value='1') Склад №3, Пушкинская, 53
+        .cart-product
+          .cart-product-holder
+            .cart-product-list
+              .product-item
+                .image
+                  +data('product-small.png')
+                .info-box
+                  a.name(href='#') Apple MacBook Air 13"
+                  .code Арт. 27635245
+                  .info-row
+                    span.count 2 шт.
+                    a.edit(href='#') Редактировать
+                    .price 567 грн
+              .product-item
+                .image
+                  +data('product-small.png')
+                .info-box
+                  a.name(href='#') Кеды Las Espadrillas Черные (24 см)
+                  .code Арт. 27635245
+                  .info-row
+                    span.count 2 шт.
+                    a.edit(href='#') Редактировать
+                    .price 12 567 грн
+            .total-holder
+              .cart-total
+                | 4 товара на сумму:
+                span.price 13 399 грн
+              .delivery-total
+                | Доставка:
+                span.price 15 грн
+              .promo
+                span.promo-handler Ввести промокод
+                .info
+                  .info-content
+                    //- | Lorem ipsum dolor sit amet, consectetur adipisicing elit mollit anim id est laborum.
+                .promo-code
+                  input(type='text', placeholder='Введите промокод')
+              .final-price
+                | К оплате:
+                span.price 14414 грн
+              .order-holder
+                button Заказ подтверждаю
+    .cart-popup-holder
+      .overlay
+      form.cart-edit(action='#')
+        .close-btn
+        .product-edit
+          .image
+            +data('product-small.png')
+          .info-box
+            span.edit-title Радактирование товара
+            a.name(href='#') Кеды Las Espadrillas Черные (24 см)
+            .info-row
+              .info-item
+                span Цвет.
+                |  Черные
+              .info-item
+                span Размер.
+                |  24 см
+              .info-item
+                span Арт.
+                |  27635245
+            .edit-row
+              .edit-item
+                span.label Цена за 1 ед.:
+                span.price-for-item
+                  em 222
+                  |  грн.
+              .edit-item
+                span.label Количество:
+                .cart-count-holder
+                  input#count-edit(type='number', pattern='[0-9]*', value='3')
+                  .handler-holder
+                    span.inc.handler
+                    span.dec.handler
+              .edit-item
+                span.label Итого:
+                span.price-total
+                  em 666
+                  |  грн.
+        .popup-buttons
+          button.back Вернуться к оформлению заказа
+          button.save Сохранить
+  script
+    import cart from "./basket";

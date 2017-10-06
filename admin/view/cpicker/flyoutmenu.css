@@ -1,0 +1,169 @@
+.superh3 {
+	font-size: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+}
+.superh3+select {
+	display: inline-block;
+	vertical-align: middle;
+}
+.addsuperh3 {
+	font-size: 15px;
+}
+.viewsel {
+	margin: 10px 0 0;
+	border-top: 1px solid #ccc;
+	padding: 10px 0 0;
+}
+.viewsel b {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 6px;
+}
+.viewsel select {
+	width: 200px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.active_menu {
+	margin: 0 0 15px;
+	padding: 12px;
+	background: #6C6964;
+	border-bottom: 2px solid #fff;
+	font-size: 15px;
+	color: #fff;
+}
+.active_menu strong {
+	color: rgb(160, 220, 110);
+	font-size: 18px;
+	font-weight: 600;
+}
+.active_menu .btn {
+	font-size: 15px;
+	padding: 6px 16px;
+
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.active_menu select {
+	display: inline-block;
+	vertical-align: middle;
+	width: 250px;
+	margin-right: 8px;
+}
+
+
+.typediv, .addtypediv {
+	/* margin-right: 70px; */
+}
+
+
+	 
+	table.sets td {
+	 padding-top: 5px;
+	 padding-bottom: 5px;
+	 border-bottom: 2px solid #ddd;
+	}
+	.table-responsive {
+	overflow: visible;
+	}
+	.advs {
+	  overflow: visible;
+	  width: 100%;
+	  height: 58px;
+	  position: relative;
+	  text-align: center;
+	  padding-top: 10px;
+	}
+	.advs a {
+	  text-decoration: none !important;
+	  font-weight: bold;
+	  color: #007FFF;
+	}
+	.advs a.expand {
+	  padding: 10px;
+	  background-color: #6C6964;
+	  border: 1px solid #fff;
+	  border-radius: 0px;
+	  box-shadow: 0px 0px 2px #333;
+	  display: block;
+	  color: #fff;
+	}
+	.advs a.closeadvm {
+	  float: right;
+	  margin-top: -20px;
+	}
+	.advs .advh {
+	  position: absolute;
+	  z-index: 99;
+	  display: none;
+	  width: 700px;
+	  background: #fff;
+	  border: 3px solid #eee;
+	  padding: 20px;
+	  text-align: left;
+	  right: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-khtml-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: 0px 0px 30px #999;
+	-moz-box-shadow: 0px 0px 30px #999;
+	box-shadow: 0px 0px 30px #999;
+	}
+	table.smenua {
+	  width: 100%;
+	  background: none;
+	  border-collapse: collapse;
+	}
+	table.smenua td {
+	  background: #fff !important;
+	  padding: 2px;
+	  border: 1px solid #ddd;
+	  }
+	  .addtypediv { display: none; }
+ 	a.button, .list a.button {
+    background: #4094D8;
+	color: #fff;
+	padding: 6px;
+	font-weight: bold;
+	border: 1px solid #4FB0FA;
+	border-right: 1px solid #3E83B7;
+	border-bottom: 1px solid #3E83B7;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	}
+	a.button:hover, .list a.button:hover {
+	background: #333;
+	border: 1px solid #444;
+	border-right: 1px solid #222;
+	border-bottom: 1px solid #222;
+	}
+    .sorder {
+	    position: absolute;
+		right: 0px;
+		top: 0px;
+		width: 50px;
+		color: #fff;
+		background: #6d6d6d;
+		padding: 5px;
+		box-radius: 5px;
+		box-shadow: 0px 0px 2px #333;
+		text-align: center;
+		font-weight: bold;
+	  }
+	  .sorder input { font-size: 15px; color: #333; font-weight: bold; text-align: center; width: 30px; height: 25px; }
+	  select.item-type { width: 200px; }
+	  .settings-row { 
+	    display: block;
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+	  }
+	  .image { display: block; }
+
+h2 { border-bottom: 1px dotted #ddd; padding-bottom: 5px; font-size: 19px; margin-top: 10px; color: #E23C3C; }

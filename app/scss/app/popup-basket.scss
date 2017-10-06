@@ -1,0 +1,115 @@
+.popup-basket {
+  width: 514px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 6;
+  @include flex(row, wrap, flex-end, flex-start);
+  transform: translate3d(514px,0,0);
+  transition: transform 0.4s ease-in-out;
+  @include response(580) {
+    width: 100%;
+    z-index: 6;
+  }
+  &.active{
+    transform:translate3d(0,0,0);
+  }
+  &__container {
+    width: 514px;
+    height: 100%;
+    background: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    @include response(480) {
+      width: 100%;
+    }
+  }
+  &__head {
+    width: 100%;
+    height: 100px;
+    background: $dgreen;
+    padding: 0 30px;
+    @include flex(row, wrap, space-between, center);
+  }
+  &__body{
+    height: calc(100% - 320px);
+    overflow: hidden;
+    @include response(349) {
+        height: calc(100% - 290px);
+    }
+  }
+  &__heading {
+    @include font(false,22,#fff,false,false,false);
+  }
+  &__heading-value {
+    @include font(false,22,#fff,false,false,false);
+    margin-left: 5px;
+  }
+  &__close {
+    fill: #6a726e;
+    cursor: pointer;
+    transition: fill 0.2s ease-in-out;
+    @include desktop-hover() {
+      fill: $green;
+    }
+  }
+  &__footer {
+    width: 100%;
+    height: 220px;
+    padding: 70px 30px 0;
+  }
+  &__section {
+    @include flex(row, wrap, space-between, center);
+    margin-bottom: 30px;
+  }
+  &__block {
+    @include font(false,16,#000,false,false,700);
+    em {
+        font-style: normal;
+        font-weight: 500;
+    }
+  }
+  &__summ {
+    @include font(rob,30,#000,false,false,700);
+    &--small {
+      @include font(rob,18,#000,false,false,false);
+    }
+  }
+  &__back {
+    width: 50%;
+    height: 60px;
+    background: $lgray;
+    @include flex(row, wrap, center, center);
+    text-transform: uppercase;
+    cursor: pointer;
+    @include font(false,false,#000,false,false,700);
+    transition: background .2s ease-in-out;
+    &:hover{
+      background: darken($gray,10%);
+    }
+    @include response(480) {
+      font-size: 10px;
+    }
+  }
+  &__order {
+    width: 50%;
+    height: 60px;
+    background: $green;
+    @include flex(row, wrap, center, center);
+    text-transform: uppercase;
+    @include font(false,false,#fff,false,false,700);
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+    &:hover{
+      background: darken($green,10%);
+    }
+    @include response(480) {
+      font-size: 10px;
+    }
+  }
+}
+.summ-basket{
+  @include font(rob,30,#000,false,false,700);
+}

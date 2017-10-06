@@ -1,0 +1,264 @@
+.admin {
+  width: 1410px;
+  margin: 90px auto;
+  @include flex(row, wrap, flex-start, flex-start);
+  @include response(1430) {
+    width: 100%;
+    padding: 0 3%;
+    margin: 60px auto;
+  }
+  @include response(960) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  // @include response(480) {
+  //   overflow-y: auto;
+  // }
+  &__description{
+    flex: 1 1 auto;
+    @include response(960) {
+      width: 100%;
+    }
+  }
+  &__nav {
+    width: 443px;
+    padding: 0;
+    list-style: none;
+    margin-right: 70px;
+    @include response(960) {
+      margin-bottom: 30px;
+    }
+    @include response(480) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &__item {
+    position: relative;
+    &.active {
+      .admin__link {
+        background: rgba(#0e1613,.05);
+        &::before {
+          content: "";
+          display: block;
+          width: 7px;
+          height: 100%;
+          background: $green;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  &__link {
+    @include flex(row, wrap, flex-start, center);
+    @include font(false,16,#000,false,false,700);
+    text-transform: uppercase;
+    width: 100%;
+    height: 72px;
+    text-decoration: none;
+    padding-left: 35px;
+    transition: background 0.2s ease-in-out;
+    @include response(480) {
+      height: 35px;
+      font-size: 14px;
+    }
+    @include desktop-hover() {
+      background: rgba(#0e1613,.05);
+    }
+  }
+}
+.form {
+  width: 300px;
+  @include response(960) {
+    margin: 0 auto;
+  }
+  .subtitle {
+      @include font(false,14,#000,false,false,700);
+      text-align: center;
+      margin: 0 0 20px;
+  }
+  &__block {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  &__title{
+    @include font(false,16,#000,false,false,700);
+    text-transform: uppercase;
+    margin: 50px 0 20px;
+  }
+  &__label {
+    @include font(false,16,#000,false,false,false);
+    position: absolute;
+    top: 12px;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+    cursor: text;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-bottom: 1px solid rgba(#b8b8b8,.5);
+    background: rgba(#000,0);
+    outline: none;
+    @include font(false,16,#000,false,false,false);
+  }
+  &__textarea {
+    display: block;
+    width: 100%;
+    min-height: 45px;
+    resize: vertical;
+    border: none;
+    border-bottom: 1px solid #6a726e;
+    background: rgba(#000,0);
+    outline: none;
+    @include font(false,16,#000,false,false,false);
+    padding: 12px 0 0;
+  }
+  &__line {
+    width: 0;
+    height: 2px;
+    background: $green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.4s ease-in-out;
+  }
+  .forgot-password {
+      text-align: center;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        @include font(false,14,#000,false,false,700);
+        text-transform: uppercase;
+        transition: .3s;
+        &:hover {
+            color: $green;
+        }
+      }
+  }
+  &__submit {
+    width: 100%;
+    height: 60px;
+    background: $green;
+    @include font(false,14,#fff,false,false,700);
+    text-transform: uppercase;
+    box-shadow: 0 18px 29px 0 rgba(#033e0a, 0.44);
+    transition: background 0.2s ease-in-out;
+    margin-top: 30px;
+    &:hover {
+      background: $lgreen;
+    }
+  }
+}
+.board{
+  box-shadow: 0px 6px 8px 0px rgba(#000, 0.07);
+  width: 100%;
+  height: 124px;
+  margin-bottom: 55px;
+  @include flex(row, nowrap, flex-start, center);
+  @include response(480) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 30px 0;
+  }
+  &__avatar{
+    width: 110px;
+    height: 55px;
+    margin-right: 20px;
+    border-right:1px solid #9d9d9d;
+    @include flex(row, wrap, center, center);
+    @include response(480) {
+      margin-bottom: 30px;
+      border: none;
+    }
+  }
+  &__description{
+    width: 250px;
+    @include response(480) {
+      width: auto;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+  }
+  &__name{
+    @include font(rob,16,#000,false,false,700);
+    margin-bottom: 5px;
+    line-height: 18px;
+  }
+  &__subtitle{
+    @include font(false,10,#000,false,false,false);
+    text-transform: uppercase;
+  }
+  &__total{
+    @include font(rob,30,#000,false,false,700);
+    margin-right: 120px;
+    em {
+        font-style: normal;
+        font-size: 18px;
+    }
+    @include response(960) {
+      font-size: 24px;
+      margin-right: 60px;
+      white-space: nowrap;
+    }
+    @include response(480) {
+      text-align: center;
+      margin-bottom: 30px;
+      margin-right: 0;
+    }
+  }
+  &__total-val{
+    @include font(false,10,#000,false,false,false);
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  &__edit{
+    background: #f3f3f3;
+    padding: 5px 10px;
+    display: inline-block;
+    @include font(false,11,#000,false,false,600);
+    text-transform: none;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+}
+
+.form__input:focus ~ .form__label,
+.form__input:valid ~ .form__label {
+  top: -4px;
+  @include font(false,12,#a0a0a0,false,false,false);
+}
+.form__input:focus ~ .form__line,
+.form__input:valid ~ .form__line {
+  width: 100%;
+}
+.form__textarea:focus ~ .form__label,
+.form__textarea:valid ~ .form__label {
+  top: -12px;
+  @include font(false,12,#a0a0a0,false,false,false);
+}
+.form__textarea:focus ~ .form__line,
+.form__textarea:valid ~ .form__line {
+  width: 100%;
+}
+.form__input:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px $dgreen inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.form__input:-webkit-autofill:focus,
+.form__input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px $dgreen inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}

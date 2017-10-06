@@ -1,0 +1,21 @@
+body,
+html {
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+img{
+  max-width: 100%;
+}
+body{
+  background: $dgreen;
+  &.overflow{
+    overflow: hidden;
+    margin-right: 17px;
+  }
+}
+.callback__block.error{
+  .callback__line{
+    background: #f00;
+    width: 100%;
+  }
+}

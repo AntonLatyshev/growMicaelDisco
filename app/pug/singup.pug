@@ -1,0 +1,38 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Вход на сайт'])
+  +heading('Вход на сайт')
+  .admin
+    ul.admin__nav
+      - var arr = ['вход', 'регистрация']
+      - var i = 0
+      for key in arr
+        if (i === 1)
+          li.admin__item.active
+            a(href="#").admin__link= key
+        else
+          li.admin__item
+            a(href="#").admin__link= key
+        - i++
+    form.form
+      .form__block
+        input(type="text", id="singup-name", required).form__input
+        label(for="singup-name").form__label Имя
+        span.form__line
+      .form__block
+        input(type="text", id="singup-surname", required).form__input
+        label(for="singup-surname").form__label Фамилия
+        span.form__line
+      .form__block
+        input(type="text", id="singup-city", required).form__input
+        label(for="singup-city").form__label Город
+        span.form__line
+      .form__block
+        input(type="text", id="singup-email", required).form__input
+        label(for="singup-email").form__label E-mail
+        span.form__line
+      .form__block
+        input(type="text", id="singup-phone", required).form__input
+        label(for="singup-phone").form__label Телефон
+        span.form__line
+      button(type="submit").form__submit войти

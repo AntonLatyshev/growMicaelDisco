@@ -1,0 +1,35 @@
+.heading{
+  width: 100%;
+  background: $dgreen;
+  @include response(1180) {
+    padding-top: 80px;
+  }
+  &__container{
+    width: 1410px;
+    margin: 0 auto;
+    @include flex(row, wrap, space-between, center);
+    @include response(1430) {
+      width: 100%;
+      padding: 0 3%;
+    }
+  }
+  &__title{
+    @include font(rob,36,#fff,false,false,700);
+    height: 92px;
+    @include flex(row, wrap, flex-start, center);
+    position: relative;
+    @include response(480) {
+      font-size: 24px;
+    }
+    &::after{
+      content: "";
+      display: block;
+      width: 40px;
+      height: 6px;
+      background: $green;
+      position: absolute;
+      bottom:0;
+      left:0;
+    }
+  }
+}

@@ -1,0 +1,199 @@
+.callback {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(#000,.8);
+  z-index: 10;
+  @include flex(row, wrap, center, flex-start);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  &__container {
+    width: 968px;
+    @include flex(row, wrap, flex-end, center);
+    position: relative;
+    margin-top: 120px;
+    @include response(1180) {
+      margin-top: 30px;
+    }
+    @include response(980) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  &__form {
+    width: 533px;
+    background: $dgreen;
+    box-shadow: 0 8px 29px 0 rgba(#000, 0.74);
+    margin-right: -25px;
+    position: relative;
+    z-index: 1;
+    padding: 80px 100px;
+    transition: all 0.2s ease-in-out;
+    @include response(480) {
+      padding: 60px 30px;
+      width: 100%;
+    }
+  }
+  &__bg {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 532px;
+    transform: translate3d(0,-50%,0);
+    @include response(920) {
+      display: none;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 27px;
+    right: 27px;
+    fill: #878c89;
+    cursor: pointer;
+    &:hover {
+      fill: $green;
+    }
+  }
+  &__title {
+    @include font(rob,36,#fff,false,false,false);
+    margin-bottom: 40px;
+    width: 100%;
+    @include response(480) {
+      font-size: 24px;
+    }
+  }
+  &__block {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  &__label {
+    @include font(false,16,#fff,false,false,false);
+    position: absolute;
+    top: 12px;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+    cursor: text;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-bottom: 1px solid #6a726e;
+    background: rgba(#000,0);
+    outline: none;
+    @include font(false,16,#fff,false,false,false);
+  }
+  &__textarea {
+    display: block;
+    width: 100%;
+    min-height: 45px;
+    resize: vertical;
+    border: none;
+    border-bottom: 1px solid #6a726e;
+    background: rgba(#000,0);
+    outline: none;
+    @include font(false,16,#fff,false,false,false);
+    padding: 12px 0 0;
+  }
+  &__line {
+    width: 0;
+    height: 2px;
+    background: $green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.4s ease-in-out;
+  }
+  &__submit {
+    width: 100%;
+    height: 60px;
+    background: $green;
+    @include font(false,14,#fff,false,false,700);
+    text-transform: uppercase;
+    box-shadow: 0 18px 29px 0 rgba(#033e0a, 0.44);
+    transition: background 0.2s ease-in-out;
+    margin-top: 30px;
+    &:hover {
+      background: $lgreen;
+    }
+  }
+}
+.callback__input:focus ~ .callback__label,
+.callback__input:valid ~ .callback__label {
+  top: -4px;
+  @include font(false,12,$green,false,false,false);
+}
+.callback__input:focus ~ .callback__line,
+.callback__input:valid ~ .callback__line {
+  width: 100%;
+}
+.callback__textarea:focus ~ .callback__label,
+.callback__textarea:valid ~ .callback__label {
+  top: -12px;
+  @include font(false,12,$green,false,false,false);
+}
+.callback__textarea:focus ~ .callback__line,
+.callback__textarea:valid ~ .callback__line {
+  width: 100%;
+}
+.callback__input:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px $dgreen inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.callback__input:-webkit-autofill:focus,
+.callback__input:-webkit-autofill:hover {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px $dgreen inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.callback.show {
+  opacity: 1;
+  visibility: visible;
+  .callback__form {
+    margin-right: 25px;
+  }
+}
+.thanks {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(#000,.8);
+  z-index: 12;
+  @include flex(row, wrap, center, flex-start);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__container {
+    width: 533px;
+    background: $dgreen;
+    margin-top: 133px;
+    @include flex(column, wrap, center, center);
+    padding: 85px 70px 100px;
+  }
+  &__icon {
+    @extend %icon-thanks-check;
+    margin-bottom: 25px;
+  }
+  &__title {
+    @include font(rob,36,#fff,false,false,false);
+    margin-bottom: 15px;
+  }
+  &__subtitle {
+    @include font(false,16,#fff,false,false,false);
+  }
+}

@@ -1,0 +1,137 @@
+.contact{
+  width: 100%;
+  &__container{
+    width: 1410px;
+    height: 250px;
+    background: #fff;
+    margin: 0 auto;
+    @include flex(row, wrap, space-between, flex-start);
+    position: relative;
+    z-index: 1;
+    @include response(1430) {
+      width: 100%;
+    }
+    @include response(1180) {
+      height: auto;
+      padding: 30px 3% 0;
+    }
+    @include response(480) {
+      flex-direction: column;
+    }
+  }
+  &__block{
+    width: 25%;
+    @include flex(row, wrap, center, flex-start);
+    @include response(1180) {
+      width: 50%;
+      justify-content: flex-start;
+      padding-left: 100px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    @include response(960) {
+      padding-left: 50px;
+    }
+    @include response(480) {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+  &__icon{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    margin-top: 100px;
+    @include response(1180) {
+      margin-top: 0;
+    }
+  }
+  &__description{
+    margin-top: 110px;
+    @include response(1180) {
+      margin-top: 0;
+    }
+  }
+  &__value{
+    display: block;
+    @include font(rob,20,#000,false,false,700);
+    text-decoration: none;
+    font-style: normal;
+    @include response(480) {
+      font-size: 14px;
+    }
+  }
+  .callback-block{
+    position: relative;
+    top: -300px;
+    margin-bottom: -300px;
+    @include response(960) {
+      top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .callback-block__container{
+    height: auto;
+  }
+  .callback-block__form{
+    height: auto;
+    margin-bottom: 80px;
+    padding: 55px 0 90px;
+  }
+  .callback-block::before{
+    bottom: -200px;
+  }
+  .callback-block__description{
+    margin-top: 470px;
+    @include response(960) {
+      margin-top: 0;
+    }
+  }
+}
+.map{
+  width: 100%;
+  height: 574px;
+  position: relative;
+  top: -80px;
+  margin-bottom: -80px;
+  @include response(960) {
+    top: 0;
+    margin-bottom: 0;
+    height: 40vh;
+    margin-bottom: 30px;
+  }
+}
+.contact-description{
+  padding: 0 60px 42px;
+  margin-bottom: 90px;
+  border-bottom:1px solid #4e4e4e;
+  @include response(480) {
+    padding: 0 30px 30px;
+  }
+  &__title{
+    @include font(rob,36,#fff,false,false,700);
+    margin-bottom: 5px;
+    @include response(480) {
+      font-size: 24px;
+    }
+  }
+  &__subtitle{
+    @include font(false,16,#74a18c,false,false,false);
+    margin-bottom: 35px;
+    @include response(480) {
+      font-size: 14px;
+    }
+  }
+  &__text{
+    @include font(false,16,#fff,false,24,false);
+    @include response(480) {
+      font-size: 12px;
+    }
+  }
+}
+.contact-description-form{
+  padding: 0 100px;
+  @include response(480) {
+    padding: 0 30px;
+  }
+}

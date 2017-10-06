@@ -1,0 +1,60 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','Агрохимия'])
+  +heading('Агрохимия')
+  .catalog
+    .filter
+      .filter__heading Фильтр
+      .filter__hidden
+        +svg('close',14,14).callback__close
+        .filter__reset
+          +svg('reset',16,17).filter__reset-icon
+          .filter__reset-title Сбросить фильтр
+        - var a = 0
+        while (a < 4)
+          .filter__block
+            .filter__title Производитель
+              +svg('arrow-down',32,24).filter__arrow
+            .filter__section
+              .filter__options
+                - var i = 0
+                while (i < 4)
+                  if (i === 2)
+                    label.filter__label.selected
+                      input(type="checkbox").filter__input
+                      a(href="#").filter__link Черный
+                        span.filter__value 18
+                  else
+                    label.filter__label
+                      input(type="checkbox").filter__input
+                      a(href="#").filter__link Черный
+                        span.filter__value 18
+                  - i++
+          - a++
+    .catalog__container
+      .controls
+        .sort Сортировать
+          +svg('arrow-down',13,9).sort__arrow
+          .sort
+            ul.sort__list
+              - arr = ['По цене', 'По популярности']
+              for key in arr
+                li.sort__item
+                  a(href="#").sort__link= key
+        .tumb
+          +svg('block',22,22).tumb__btn.active#block
+          +svg('list',22,22).tumb__btn#list
+      .catalog__content
+        - var i = 0
+        while (i < 6)
+          include ./includes/_product.pug
+          - i++
+        include ./includes/_pagination.pug
+        include ./includes/_about-block.pug
+    .catalog__callback
+      include ./includes/_callback-form-big.pug
+      .callback-block__description
+        +data('logo-dark.png').callback-block__logo
+        .callback-block__title Мы подберем для вас оптимальный
+          span.yellow товар
+        .callback-block__subtitle Напишите нам, наш менеджер перезвонит вам в ближайшее время.

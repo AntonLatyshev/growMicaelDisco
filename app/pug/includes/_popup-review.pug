@@ -1,0 +1,42 @@
+.popup-review
+  .callback__container
+    +data('callback-bg.jpg').callback__bg
+    form.callback__form
+      +svg('close',14,14).callback__close
+      .callback__title Оставьте Ваш отзыв
+      .card__review-raiting
+        .card__review-title Ваша оценка:
+        .card__review-container(data-rate="")
+          input(type="radio" value="popup-star-5" name="star-popup" id="popup-star-5")
+          label(for="popup-star-5").card__review-block
+            +svg('plant-5',22,53).card__review-svg
+            .card__review-position 5
+          input(type="radio" value="popup-star-4" name="star-popup" id="popup-star-4")
+          label(for="popup-star-4").card__review-block
+            +svg('plant-4',21,45).card__review-svg
+            .card__review-position 4
+          input(type="radio" value="popup-star-3" name="star-popup" id="popup-star-3")
+          label(for="popup-star-3").card__review-block
+            +svg('plant-3',16,36).card__review-svg
+            .card__review-position 3
+          input(type="radio" value="popup-star-2" name="star-popup" id="popup-star-2")
+          label(for="popup-star-2").card__review-block
+            +svg('plant-2',10,28).card__review-svg
+            .card__review-position 2
+          input(type="radio" value="popup-star-1" name="star-popup" id="popup-star-1")
+          label(for="popup-star-1").card__review-block
+            +svg('plant-1',6,13).card__review-svg
+            .card__review-position 1
+      .callback__block
+        input(type="text", id="callback__review-name", required).callback__input.callback__input--review
+        label(for="callback__review-name").callback__label Ваше имя*
+        span.callback__line
+      .callback__block
+        input(type="text", id="callback__review-phone", required).callback__input
+        label(for="callback__review-phone").callback__label Номер телефона*
+        span.callback__line
+      .callback__block
+        textarea(type="text", id="callback__review-textarea", required).callback__textarea
+        label(for="callback__review-textarea").callback__label Сообщение*
+        span.callback__line
+      button(type="submit").callback__review-submit отправить

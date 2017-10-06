@@ -1,0 +1,556 @@
+.header {
+  width: 100%;
+  background: #192c23;
+  position: relative;
+  z-index: 5;
+  @include response(1180) {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  &__container {
+    width: 1410px;
+    height: 150px;
+    margin: 0 auto;
+    @include flex(row, wrap, space-between, center);
+    @include response(1430) {
+      width: 100%;
+      padding: 0 3%;
+    }
+    @include response(1180) {
+      height: 80px;
+    }
+  }
+  &__logo {
+    display: block;
+    img {
+      width: 140px;
+      height: 90px;
+      @include response(1180) {
+        width: 92px;
+        height: 58px;
+      }
+    }
+  }
+  .hamburger{
+    width: 64px;
+    height: 53px;
+    border:2px solid $green;
+    display: none;
+    &::before{
+      content: "";
+      display: block;
+      @extend %icon-hamburger;
+    }
+    &.active{
+      &::before{
+        content: "";
+        display: block;
+        @extend %icon-close;
+      }
+    }
+    @include response(1180) {
+      @include flex(row, wrap, center, center);
+    }
+  }
+  &__nav {
+    height: 75px;
+    @include flex(column, wrap, space-between, stretch);
+    @include response(1180) {
+      display: none;
+    }
+  }
+  &__block {
+    @include flex(row, wrap, space-between, center);
+  }
+  &__phone {
+    @include flex(row, wrap, center, center);
+    position: relative;
+    overflow: hidden;
+    .arrow-svg {
+      fill: #fff;
+      z-index: 3;
+    }
+    @include response(1430) {
+      margin-left: 9px;
+    }
+    @include response(1300) {
+      margin-left: -15px;
+    }
+    @include response(1260) {
+      margin-left: 0;
+    }
+    @include desktop-hover() {
+      overflow: visible;
+      .arrow-svg {
+        transform: rotate(180deg);
+      }
+      .dropdown-phone {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+        transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      }
+    }
+  }
+  &__phone-value {
+    @include font(rob,16,#fff,false,false,false);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    @include desktop-hover() {}
+  }
+  &__callback {
+    @include font(rob,16,#fff,false,false,false);
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 60px;
+    transition: color .2s ease-in-out;
+    @include desktop-hover(){
+      color: $green;
+    }
+    @include response(1300) {
+      margin-right: 0;
+    }
+  }
+  &__search {
+    width: 400px;
+    height: 38px;
+    @include flex(row, wrap, space-between, center);
+    border: 1px solid rgba(#bdbdbd,.2);
+  }
+  &__input {
+    display: block;
+    height: 100%;
+    border: none;
+    padding: 0 15px;
+    @include font(false,false,#fff,false,false,false);
+    flex-grow: 1;
+    @include placeholder {
+       @include font(false,false,#fff,false,false,false);
+      opacity: 1;
+    }
+  }
+  &__search-btn {
+    width: 43px;
+    height: 100%;
+    @include flex(row, wrap, center, center);
+    &::before {
+      content: "";
+      display: block;
+      @extend %icon-search;
+    }
+  }
+}
+.catalog-btn {
+  width: 150px;
+  height: 53px;
+  border: 2px solid $green;
+  @include flex(row, wrap, center, center);
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+  position: relative;
+  transition: border-color .1s ease-in-out, background .2s ease-in-out;
+  &:hover{
+    background: $green;
+  }
+  @include response(1180) {
+    display: none;
+  }
+  &::before{
+    content: "";
+    display: block;
+    width: calc(100% + 4px);
+    height: 0;
+    background: #0b130f;
+    position: absolute;
+    top:-2px;
+    left:-2px;
+    opacity: 0;
+    transition: height .1s ease-in-out, opacity .1s ease-in-out;
+  }
+  &.active{
+    border-color: rgba(#000,0);
+    &::before{
+      content: "";
+      display: block;
+      height: 88px;
+      opacity: 1;
+    }
+    .catalog-btn__title{
+      color: $green;
+    }
+    .catalog-btn__icon{
+      @extend %icon-close;
+    }
+  }
+  &__icon {
+    @extend %icon-hamburger;
+    margin: 0 10px;
+    position: relative;
+    z-index: 1;
+  }
+  &__title {
+    @include font(false,14,#fff,false,false,false);
+    margin: 0 10px;
+    position: relative;
+    z-index: 1;
+  }
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  @include flex(row, wrap, space-between, center);
+  &__item {
+    margin-right: 35px;
+    @include response(1300) {
+      margin-right: 10px;
+    }
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    @include font(false,12,rgba(255,255,255,.5),false,false,false);
+    text-transform: uppercase;
+    padding: 0 5px;
+    position: relative;
+    overflow: hidden;
+    @include desktop-hover() {
+      .menu__link-hover {
+        transform: translate3d(0,-100%,0);
+      }
+    }
+  }
+  &__link-hover {
+    display: block;
+    @include font(false,12,rgba(255,255,255,.5),false,false,false);
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: translate3d(0,0,0);
+    transition: transform 0.2s ease-in-out;
+    @include response(1180) {
+      font-size: 20px;
+    }
+    &::before {
+      content: attr(data-hover);
+      position: absolute;
+      @include font(false,12,$green,false,false,700);
+      top: 100%;
+      transform: translate3d(0,0,0);
+    }
+  }
+}
+.language {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  @include flex(row, wrap, center, center);
+  margin-right: 35px;
+  @include response(1180) {
+    overflow: visible;
+  }
+  @include desktop-hover() {
+    overflow: visible;
+    .language__value {
+        color: #009249;
+    }
+    .language__list {
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      visibility: visible;
+    }
+    .arrow-svg {
+      transform: rotate(180deg);
+      fill: #009249;
+    }
+  }
+  &__value {
+    @include font(false,12,rgba(255,255,255,.5),false,false,false);
+    text-transform: uppercase;
+    @include response(1180) {
+      font-size: 16px;
+    }
+  }
+  &__list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    opacity: 0;
+    transform: translate3d(0,-10px,0);
+    visibility: hidden;
+    padding-top: 5px;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    @include response(1180) {
+     top: 16px;
+    }
+    &.show{
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      visibility: visible;
+    }
+  }
+  &__link {
+    @include font(false,12,rgba(255,255,255,.5),false,false,false);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    &:hover {
+        color: rgba(0,146,73,1);
+    }
+    @include response(1180) {
+      font-size: 16px;
+    }
+  }
+}
+.arrow-svg {
+  fill: #878c89;
+  margin-left: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+.currency {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  @include flex(row, wrap, center, center);
+  margin-right: 35px;
+  @include response(1180) {
+    overflow: visible;
+  }
+  @include desktop-hover() {
+    overflow: visible;
+    .currency__value {
+         color: #009249;
+    }
+    .currency__list {
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      visibility: visible;
+    }
+    .arrow-svg {
+      transform: rotate(180deg);
+      fill: #009249;
+    }
+  }
+  &__value {
+    @include font(false,12,rgba(255,255,255,.5),false,false,false);
+    text-transform: uppercase;
+    @include response(1180) {
+      font-size: 16px;
+    }
+  }
+  &__list {
+    width: 100px;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    opacity: 0;
+    transform: translate3d(0,-10px,0);
+    padding-top: 5px;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    visibility: hidden;
+    @include response(1180) {
+      top: 16px;
+    }
+    &.show{
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      visibility: visible;
+    }
+  }
+  &__link {
+    @include font(false,12,rgba(255,255,255,.5),false,false,false);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    &:hover {
+        color: rgba(0,146,73,1);
+    }
+    @include response(1180) {
+      font-size: 16px;
+    }
+  }
+}
+.enter {
+  @include flex(row, wrap, center, center);
+  cursor: pointer;
+  @include desktop-hover(){
+    .enter__title{
+      color: $green;
+    }
+    .enter__icon{
+      fill: $green;
+    }
+  }
+  &__icon {
+    fill: #fff;
+    margin-right: 10px;
+    transition: fill .2s ease-in-out;
+  }
+  &__title {
+    @include font(false,12,#fff,false,false,false);
+    text-transform: uppercase;
+    transition: color .2s ease-in-out;
+  }
+}
+.basket-btn {
+  width: 65px;
+  height: 83px;
+  position: relative;
+  cursor: pointer;
+  @include flex(row, wrap, center, center);
+  padding-top: 15px;
+  @include response(1180) {
+    display: none;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__icon {
+    @extend %icon-basket;
+    margin: 0 3px;
+  }
+  &__value {
+    @include font(false,false,rgba(255,255,255,.5),false,false,false);
+    margin: 0 3px;
+  }
+}
+.dropdown-phone {
+  background: #0b130f;
+  border: 2px solid #009249;
+  width: 200px;
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  padding: 20px 18px;
+  margin-left: -100px;
+  opacity: 0;
+  z-index: 3;
+  transform: translate3d(0,-10px,0);
+  .dropdown-phone__value {
+    margin-bottom: 10px;
+    @include font(rob,16,#fff,false,false,false);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    transition: color .2s ease-in-out;
+    @include desktop-hover(){
+      color: $green;
+    }
+  }
+}
+.header-catalog {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: visibility .2s ease-in-out, opacity .2s ease-in-out;
+  &.show{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: calc(100% - 40px);
+    background: #0b130f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  &__container {
+    width: 1410px;
+    margin: 0 auto;
+    @include response(1430) {
+      width: 100%;
+      padding: 0 3%;
+    }
+  }
+  &__content {
+    width: 870px;
+    background: #0b130f;
+    box-shadow: 0 8px 29px rgba(#000, .74);
+    border-top: 3px solid $green;
+    @include response(1180) {
+      width: 100%;
+    }
+  }
+  &__list {
+    width: 345px;
+    padding: 40px 0 20px 45px;
+    list-style: none;
+    position: relative;
+    @include response(1180) {
+      padding: 0;
+    }
+  }
+  &__link {
+    display: block;
+    @include font(false,false,#fff,false,false,false);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 13px 0;
+    transition: color 0.2s ease-in-out;
+    @include response(1180) {
+      padding: 5px 0;
+      font-size: 12px;
+    }
+    &.active{
+      color: $green;
+      .header-catalog__section{
+        opacity: 1;
+        visibility: visible;
+        transform:translate3d(0,0,0);
+        transition: opacity .4s ease-in-out, transform .4s ease-in-out;
+      }
+    }
+  }
+  &__section {
+    position: absolute;
+    top: 0;
+    left: 345px;
+    width: 525px;
+    height: 100%;
+    padding-top: 50px;
+    padding-left: 45px;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    visibility: hidden;
+    transform: translate3d(10px,0,0);
+    transition: opacity .4s ease-in-out, transform 0s ease-in-out .2s;
+    @include response(1180) {
+      display: none;
+    }
+    &::after{
+      content: "";
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0b130f, rgba(#0b130f,0));
+      z-index: -1;
+    }
+  }
+  &__title{
+    @include font(rob,36,#fff,false,false,false);
+    text-transform: none;
+  }
+}

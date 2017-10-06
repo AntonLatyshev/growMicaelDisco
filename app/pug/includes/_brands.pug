@@ -1,0 +1,12 @@
+.brands
+  .brands__title НАши бренды
+  .brands__carousel
+    - var i = 0
+    while ( i < 9 )
+      a(href="#").brands__slide
+        .brands__img
+          +data('brands-img-1.png')
+        +data('brands-icon-1.png').brands__logo
+        .brands__info
+          +data('brands-icon-2.png')
+          - i++

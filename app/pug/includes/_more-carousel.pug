@@ -1,0 +1,12 @@
+.features
+  .features__container
+      .features__catalog
+        .tab
+          .tab__head
+            .tab__title= title
+          .tab__container
+            .tab__content
+              - var k = 0
+              while (k < 8)
+                include _product.pug
+                - k++

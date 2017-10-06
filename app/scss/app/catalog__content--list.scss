@@ -1,0 +1,47 @@
+.catalog .catalog__content--list {
+  .product {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+    height: 228px;
+    overflow: hidden;
+    @include flex(row, wrap, flex-start, center);
+    &__img {
+      width: 203px;
+      height: 100%;
+    }
+    &__description{
+      width: 580px;
+      height: auto;
+      padding: 0;
+      padding-left: 40px;
+      margin-right: 40px;
+      @include response(1300) {
+        width: 560px;
+        margin-right: 0;
+      }
+    }
+    &__text{
+      display: block;
+      margin-bottom: 50px;
+    }
+    &__block{
+      @include flex(row, wrap, flex-start, center);
+      margin-bottom: 30px;
+    }
+    &__id{
+      margin-right: 40px;
+      margin-bottom: 0;
+    }
+    &__availability{
+      margin-bottom: 0;
+      margin-right: 45px;
+    }
+    &__button{
+      width: 153px;
+      align-self: flex-end;
+      margin: 0 0 30px 40px;
+
+    }
+  }
+}

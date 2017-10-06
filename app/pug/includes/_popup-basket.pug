@@ -1,0 +1,23 @@
+.popup-basket
+  .popup-basket__container
+    .popup-basket__head
+      .popup-basket__heading Корзина
+        span.popup-basket__heading-value (1)
+      +svg('close',14,14).popup-basket__close
+    .popup-basket__body
+      - var i = 0
+      while (i<3)
+        include ../includes/_product-min.pug
+        - i++
+    .popup-basket__footer
+      .popup-basket__section
+        .popup-basket__block
+          span.summ-quantity 1
+          span.weight  товара 
+            em на сумму:
+        span.popup-basket__summ
+          span.summ-basket 7 310.00
+          span.popup-basket__summ--small  грн
+      .popup-basket__section
+        .popup-basket__back назад к покупкам
+        .popup-basket__order оформить заказ

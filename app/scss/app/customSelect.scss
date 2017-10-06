@@ -1,0 +1,57 @@
+.jcf-select{
+  width: 312px;
+  height: 36px;
+  border: none;
+  border:1px solid #adadad;
+  margin-bottom: 0;
+  cursor: pointer;
+  margin-left: 24px;
+  @include response(480) {
+    margin-left: 10px;
+    flex: 1 1 auto;
+  }
+  .jcf-select-opener{
+    background: rgba(#000,0);
+    &::before{
+      content: "";
+      display: block;
+      @extend %icon-arrow-select;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+  .jcf-option-main-subscribe__option{
+    @include font(lt,30,#363636,false,false);
+  }
+}
+.jcf-option-main-subscribe__option{
+  @include font(lt,30,#363636,false,false);
+  display: block;
+  padding: 13px 0;
+}
+.jcf-list .jcf-option {
+    padding: 15px 9px;
+}
+.jcf-focus, .jcf-focus * {
+  border-color: rgba(#000,0) !important;
+}
+.jcf-select.jcf-focus{
+  border:1px solid #adadad !important;
+}
+.jcf-select-drop .jcf-select-drop-content {
+    border: 1px solid #adadad;
+}
+.jcf-select .jcf-select-text{
+  cursor: pointer;
+  height: 100%;
+  @include flex(row, wrap, flex-start, center);
+}
+.jcf-option.jcf-option-main-subscribe__option{
+  cursor: pointer;
+}
+.jcf-list-box .jcf-selected, .jcf-select-drop .jcf-hover{
+  background: #daefe5;
+  cursor: pointer;
+}

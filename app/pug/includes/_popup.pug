@@ -1,0 +1,19 @@
+.callback
+  .callback__container
+    +data('callback-bg.jpg').callback__bg
+    form.callback__form
+      +svg('close',14,14).callback__close
+      .callback__title Обратный звонок
+      .callback__block
+        input(type="text", id="callback__form-name", name="callback__form-name", required).callback__input
+        label(for="callback__form-name").callback__label Ваше имя
+        span.callback__line
+      .callback__block
+        input(type="text", id="callback__form-phone", name="callback__form-phone", required).callback__input
+        label(for="callback__form-phone").callback__label Номер телефона
+        span.callback__line
+      .callback__block
+        textarea(type="text", id="callback__form-textarea", name="callback__form-textarea", required).callback__textarea
+        label(for="callback__form-textarea").callback__label Сообщение
+        span.callback__line
+      button(type="submit").callback__submit отправить

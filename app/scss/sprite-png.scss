@@ -1,0 +1,203 @@
+
+%icon-arrow-carousel-black {
+  background-image: url(../image/sprite.png);
+  background-position: -219px 0px;
+  width: 11px;
+  height: 17px;
+}
+%icon-arrow-carousel {
+  background-image: url(../image/sprite.png);
+  background-position: -36px -165px;
+  width: 12px;
+  height: 25px;
+}
+%icon-arrow-select-green {
+  background-image: url(../image/sprite.png);
+  background-position: -219px -74px;
+  width: 10px;
+  height: 8px;
+}
+%icon-arrow-select {
+  background-image: url(../image/sprite.png);
+  background-position: -219px -61px;
+  width: 10px;
+  height: 8px;
+}
+%icon-basket {
+  background-image: url(../image/sprite.png);
+  background-position: -53px -165px;
+  width: 18px;
+  height: 15px;
+}
+%icon-close {
+  background-image: url(../image/sprite.png);
+  background-position: -166px -140px;
+  width: 14px;
+  height: 14px;
+}
+%icon-delivery {
+  background-image: url(../image/sprite.png);
+  background-position: -100px -46px;
+  width: 55px;
+  height: 49px;
+}
+%icon-delivery_2 {
+  background-image: url(../image/sprite.png);
+  background-position: 0px -165px;
+  width: 31px;
+  height: 45px;
+}
+%icon-delivery_3 {
+  background-image: url(../image/sprite.png);
+  background-position: -115px -100px;
+  width: 62px;
+  height: 35px;
+}
+%icon-facebook {
+  background-image: url(../image/sprite.png);
+  background-position: -219px -22px;
+  width: 8px;
+  height: 16px;
+}
+%icon-hamburger {
+  background-image: url(../image/sprite.png);
+  background-position: -139px -140px;
+  width: 22px;
+  height: 14px;
+}
+%icon-pagination-arrow {
+  background-image: url(../image/sprite.png);
+  background-position: -219px -43px;
+  width: 9px;
+  height: 13px;
+}
+%icon-pay_1 {
+  background-image: url(../image/sprite.png);
+  background-position: -100px 0px;
+  width: 114px;
+  height: 41px;
+}
+%icon-pay_2 {
+  background-image: url(../image/sprite.png);
+  background-position: 0px -100px;
+  width: 62px;
+  height: 60px;
+}
+%icon-pay_3 {
+  background-image: url(../image/sprite.png);
+  background-position: -67px -100px;
+  width: 43px;
+  height: 60px;
+}
+%icon-search {
+  background-image: url(../image/sprite.png);
+  background-position: -115px -140px;
+  width: 19px;
+  height: 19px;
+}
+%icon-send-mail {
+  background-image: url(../image/sprite.png);
+  background-position: -182px -100px;
+  width: 24px;
+  height: 22px;
+}
+%icon-thanks-check {
+  background-image: url(../image/sprite.png);
+  background-position: -160px -46px;
+  width: 41px;
+  height: 41px;
+}
+%icon-video-btn {
+  background-image: url(../image/sprite.png);
+  background-position: 0px 0px;
+  width: 95px;
+  height: 95px;
+}
+%icon-vk {
+  background-image: url(../image/sprite.png);
+  background-position: -185px -140px;
+  width: 18px;
+  height: 10px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  %icon-arrow-carousel-black {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-arrow-carousel {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-arrow-select-green {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-arrow-select {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-basket {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-close {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-delivery {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-delivery_2 {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-delivery_3 {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-facebook {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-hamburger {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-pagination-arrow {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-pay_1 {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-pay_2 {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-pay_3 {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-search {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-send-mail {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-thanks-check {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-video-btn {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+  %icon-vk {
+    background-image: url(../image/sprite@2x.png);
+    background-size: 230px 210px;
+  }
+}

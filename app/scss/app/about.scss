@@ -1,0 +1,241 @@
+.about {
+  width: 100%;
+}
+.about-video {
+  width: 100%;
+  height: 576px;
+  overflow: hidden;
+  position: relative;
+  @include flex(row, wrap, center, center);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include response(480) {
+    height: 300px;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#112918, .8);
+    z-index: 1;
+  }
+  video{
+    position: absolute;
+    top:0;
+    left:0;
+    width: auto;
+    min-height: 576px;
+    @include response(1180) {
+      display: none;
+    }
+  }
+  &__block{
+    width: 863px;
+    position: relative;
+    z-index: 2;
+    @include flex(column, wrap, center, center);
+    @include response(960) {
+      width: 100%;
+    }
+  }
+  &__title{
+    @include font(rob,72,#fff,false,false,700);
+    @include response(480) {
+      font-size: 36px;
+    }
+  }
+  &__subtitle{
+    @include font(false,18,#fff,false,false,false);
+    text-align: center;
+    @include response(480) {
+      font-size: 14px;
+    }
+  }
+  &__mute{
+    width: 36px;
+    height: 36px;
+    background-image: url('/image/data/mute.gif');
+    cursor: pointer;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    z-index: 3;
+    @include response(1180) {
+      display: none;
+    }
+    &.disabled{
+      &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #f4bc10;
+        position: absolute;
+        top:26px;
+        left: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+.about-content{
+  width: 683px;
+  margin: 0 auto;
+  position: relative;
+  top: -75px;
+  margin-bottom: -75px;
+  z-index: 2;
+  background: #fff;
+  padding: 65px 70px;
+  @extend %text;
+  @include response(700) {
+    width: 100%;
+    padding: 30px 3%;
+    top: 0;
+  }
+  &__title{
+    @include font(rob,24,#000,false,false,700);
+  }
+  .slick-next,
+  .slick-prev {
+    width: 11px;
+    height: 17px;
+    background: rgba(#18241e, 0);
+    @include flex(row, wrap, center, center);
+    bottom: -30px;
+    z-index: 1;
+    transition: all .2s ease-in-out;
+    &::before {
+      content: "";
+      display: block;
+      @extend %icon-arrow-carousel-black;
+      opacity: 1;
+      transition: all .2s ease-in-out;
+    //   margin: auto;
+    }
+  }
+  .slick-prev {
+    left: 225px;
+    @include response(480) {
+      left: 5%;
+    }
+    &::before{
+      content: "";
+      display: block;
+      transform: rotate(180deg);
+      margin: -8px 0 0 -5px;
+    }
+  }
+  .slick-next{
+    right: 225px;
+    @include response(480) {
+      right: 5%;
+    }
+    &::before {
+        margin: -8px 0 0 -5px;
+    }
+  }
+  .slick-next:focus,
+  .slick-prev:focus{
+    background: rgba(#009249,0);
+  }
+  .slick-next:hover,
+  .slick-prev:hover {
+    background: rgba(#009249,0);
+    box-shadow: 0 18px 29px 0 rgba(3, 62, 10, 0);
+  }
+}
+.carousel-nav{
+  width: 100%;
+  position: relative;
+  top: -60px;
+  margin-bottom: -60px;
+  z-index: 1;
+  padding-top: 140px;
+  &::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 314px;
+    background: $dgreen;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+  }
+  &__container{
+    width: 683px;
+    margin: 0 auto;
+    background: $dgreen;
+    @include response(960) {
+      width: 100%;
+      overflow: hidden;
+      padding: 0 3%;
+    }
+  }
+  &__title{
+    @include font(rob,36,#fff,false,false,700);
+    text-transform: uppercase;
+    width: 683px;
+    margin: 0 auto 45px;
+    @include response(700) {
+      width: 100%;
+    }
+    @include response(480) {
+      padding: 0 3%;
+      font-size: 24px;
+    }
+  }
+  &__slide{
+    @include font(rob,18,#9e9e9e,false,false,700);
+    text-transform: uppercase;
+    margin: 0 11px;
+    padding-bottom: 10px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    &::before{
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #f4bc10;
+      position: absolute;
+      bottom: 0;
+      left:0;
+      transition: width .2s ease-in-out;
+    }
+  }
+  .slick-current{
+    color: #fff;
+    &::before{
+      width: 100%;
+    }
+  }
+}
+.carousel-for{
+  width: 683px;
+  margin: 65px auto 0;
+  @include response(700) {
+    width: 100%;
+  }
+  &__slide{
+    width: 100%;
+    padding: 55px 70px;
+    outline: none;
+    @include response(480) {
+      padding: 55px 10px 0;
+    }
+  }
+  img{
+    height: auto;
+  }
+  &__title{
+    @include font(rob,24,#000,false,false,700);
+  }
+  @extend %text;
+}

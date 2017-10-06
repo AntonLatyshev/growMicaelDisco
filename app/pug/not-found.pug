@@ -1,0 +1,10 @@
+extends ./layouts/_layout.pug
+block content
+  +breadcrumbs(['главная','404'])
+  .not-found
+    .not-found__container
+      .not-found__block
+        +image('not-found.png').not-found__img
+        .not-found__title
+          | “Бро, нет такой странички, листай дальше”
+          a(href="#").not-found__link  на главную

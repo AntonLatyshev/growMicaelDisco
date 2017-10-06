@@ -1,0 +1,68 @@
+header.header
+  .header__container
+    a(href="/").header__logo
+      +data('logo.png')
+    .hamburger
+    .catalog-btn
+      .catalog-btn__icon
+      .catalog-btn__title каталог
+    .header__nav
+      .header__block
+        ul.menu
+          - var item = ['О Комании', 'вопрос-ответ', 'партнерам', 'блог', 'оплата-доставка ', 'контакты']
+          for key in item
+            li.menu__item
+              a(href="#").menu__link
+                span.menu__link-hover(data-hover=""+key)= key
+        .language
+          .language__value рус
+          +svg('arrow-down',11,7).arrow-svg
+          ul.language__list
+            - var item = ['укр']
+            for key in item
+              li.language__item
+                a(href="#").language__link= key
+        .currency
+          .currency__value $
+          +svg('arrow-down',11,7).arrow-svg
+          ul.currency__list
+            - var item = ['₴']
+            for key in item
+              li.currency__item
+                a(href="#").currency__link= key
+        .enter
+          +svg('enter',10,12).enter__icon
+          .enter__title Вход
+      .header__block
+        .header__phone
+          a(href="tel:+380574831701").header__phone-value +38 (057) 483-17-01
+          .dropdown-phone
+            a(href="tel:+380574831701").dropdown-phone__value +38 (057) 483-17-01
+            a(href="tel:+380574831701").dropdown-phone__value +38 (044) 483-17-01
+            a(href="tel:+380574831701").dropdown-phone__value +38 (096) 483-17-01
+          +svg('arrow-down',11,7).arrow-svg
+        .header__callback обратный звонок
+        form.header__search
+          input.header__input(type="text", placeholder="Что ищем...")
+          button.header__search-btn(type="submit")
+    .basket-btn
+      +image('basket-btn.png')
+      .basket-btn__icon
+      .basket-btn__value 0
+  .header-catalog
+    .header-catalog__container
+      .header-catalog__content
+        ul.header-catalog__list
+          - i = 0
+          - var arr = ['Удобрения', 'Агрохимия', 'Аксессуары', 'Схемы и инструкции', 'Вентиляция', 'Гидропонические системы', 'Декор и дизайн', 'GROW BOX', 'Освещение', 'Субстраты', 'Защита растений', 'Кассеты, теплички, горшки', 'Приборы измерения', 'Капельный полив', 'Семена', 'Комиссионный отдел']
+          for key in arr
+            li.header-catalog__item
+              if (i === 0)
+                a.header-catalog__link.active(href="#")= key
+                  span.header-catalog__section(style="background-image:url(/image/data/header-catalog.jpg)")
+                    span.header-catalog__title= key
+              else
+                a.header-catalog__link(href="#")= key
+                  span.header-catalog__section(style="background-image:url(/image/data/header-catalog.jpg)")
+                    span.header-catalog__title= key
+              - i++
